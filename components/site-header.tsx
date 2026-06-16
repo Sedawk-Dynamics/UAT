@@ -23,7 +23,6 @@ const NAV = [
   { label: "About", href: "/about" },
   { label: "Products", href: "/products", mega: true },
   { label: "Industries", href: "/industries" },
-  { label: "Inquiry", href: "/inquiry" },
   { label: "Contact", href: "/contact" },
 ];
 

@@ -3,7 +3,11 @@
 import { motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/utils";
 
-/** Clip/mask reveal for hero & editorial imagery. Reduced-motion → plain fade. */
+/**
+ * Fade + subtle zoom reveal for hero & editorial imagery. Reduced-motion → plain
+ * fade. Uses opacity/scale (not clip-path) so the image always settles fully
+ * visible even if the reveal is interrupted.
+ */
 export default function ImageReveal({
   children,
   className,
@@ -15,10 +19,10 @@ export default function ImageReveal({
   return (
     <motion.div
       className={cn(className)}
-      initial={reduce ? { opacity: 0 } : { clipPath: "inset(0 0 100% 0)", opacity: 0 }}
-      whileInView={reduce ? { opacity: 1 } : { clipPath: "inset(0 0 0% 0)", opacity: 1 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.9, ease: [0.2, 0.7, 0.2, 1] }}
+      initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 1.04 }}
+      whileInView={reduce ? { opacity: 1 } : { opacity: 1, scale: 1 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8, ease: [0.2, 0.7, 0.2, 1] }}
     >
       {children}
     </motion.div>
