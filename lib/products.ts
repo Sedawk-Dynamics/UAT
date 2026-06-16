@@ -539,9 +539,11 @@ export const CATALOG: Category[] = [
 export const FALLBACK_IMAGE = "/img/feature.jpg";
 
 /**
- * Real photography mirrored from the live Universal Air Technologies site into
- * /public/img. Where the source had no dedicated image, a category-appropriate
- * confirmed photo is reused (marked TODO) so no card ever renders empty/broken.
+ * Real client photography stored under /public/img/products. Files were supplied
+ * by the client and renamed to clean, slug-based, URL-safe names (primary
+ * <slug>.jpg, gallery <slug>-N.ext). Where the client supplied no dedicated
+ * photo, a category-appropriate confirmed photo is reused (marked TODO) so no
+ * card ever renders empty/broken.
  */
 const PRODUCT_IMAGES: Record<string, { image: string; gallery?: string[] }> = {
   // Air Pollution Control
@@ -552,21 +554,74 @@ const PRODUCT_IMAGES: Record<string, { image: string; gallery?: string[] }> = {
       "/img/products/pulse-jet-system2.png",
       "/img/products/pulse-jet-system3.png",
       "/img/products/pulse-jet-system4.png",
+      "/img/products/pulse-jet-bag-filter-install-1.jpg",
+      "/img/products/pulse-jet-bag-filter-install-2.jpg",
     ],
   },
-  "cyclone-separator": { image: "/img/products/horizontal-dust-collector.jpg" }, // TODO: dedicated cyclone photo
-  "bibo-dust-collector": { image: "/img/products/bibo-dust-collector.jpg" },
-  "bibo-units": { image: "/img/products/bibo-dust-collector.jpg" }, // TODO: dedicated BIBO units photo
-  "horizontal-dust-collector": { image: "/img/products/horizontal-dust-collector.jpg" },
-  "gmp-portable-dust-collector": { image: "/img/products/gmp-portable-dust-collector.jpg" },
-  "venturi-scrubber": { image: "/img/products/venturi-scrubber.jpg" },
-  "packed-bed-scrubber": { image: "/img/products/packed-bed-scrubber.jpg" },
-  "hybrid-scrubber": { image: "/img/products/venturi-scrubber.jpg" }, // TODO: dedicated hybrid scrubber photo
-  "de-dusting-tunnels": { image: "/img/products/gmp-portable-dust-collector.jpg" }, // TODO: dedicated de-dusting tunnel photo
+  "cyclone-separator": { image: "/img/products/cyclone-separator.jpg" },
+  "bibo-dust-collector": {
+    image: "/img/products/bibo-dust-collector.jpg",
+    gallery: ["/img/products/bibo-dust-collector-1.jpg"],
+  },
+  "bibo-units": {
+    image: "/img/products/bibo-units.jpg",
+    gallery: ["/img/products/bibo-units-1.jpg"],
+  },
+  "horizontal-dust-collector": {
+    image: "/img/products/horizontal-dust-collector.jpg",
+    gallery: [
+      "/img/products/horizontal-dust-collector-1.jpg",
+      "/img/products/horizontal-dust-collector-2.png",
+    ],
+  },
+  "gmp-portable-dust-collector": {
+    image: "/img/products/gmp-portable-dust-collector.jpg",
+    gallery: [
+      "/img/products/gmp-portable-dust-collector-1.png",
+      "/img/products/gmp-portable-dust-collector-2.png",
+      "/img/products/gmp-portable-dust-collector-3.png",
+      "/img/products/gmp-portable-dust-collector-4.png",
+    ],
+  },
+  "venturi-scrubber": {
+    image: "/img/products/venturi-scrubber.jpg",
+    gallery: [
+      "/img/products/venturi-scrubber-1.jpg",
+      "/img/products/venturi-scrubber-2.png",
+    ],
+  },
+  "packed-bed-scrubber": {
+    image: "/img/products/packed-bed-scrubber.jpg",
+    gallery: [
+      "/img/products/packed-bed-scrubber-1.png",
+      "/img/products/packed-bed-scrubber-2.png",
+    ],
+  },
+  "hybrid-scrubber": {
+    image: "/img/products/hybrid-scrubber.png",
+    gallery: [
+      "/img/products/hybrid-scrubber-1.png",
+      "/img/products/hybrid-scrubber-2.png",
+      "/img/products/hybrid-scrubber-3.png",
+      "/img/products/hybrid-scrubber-4.png",
+    ],
+  },
+  "de-dusting-tunnels": {
+    image: "/img/products/de-dusting-tunnels.jpg",
+    gallery: [
+      "/img/products/de-dusting-tunnels-1.jpg",
+      "/img/products/de-dusting-tunnels-2.jpg",
+      "/img/products/de-dusting-tunnels-3.jpg",
+      "/img/products/de-dusting-tunnels-4.jpg",
+    ],
+  },
   // HVAC
   "centrifugal-blowers": {
-    image: "/img/products/blower.jpg",
+    image: "/img/products/centrifugal-blowers.jpg",
     gallery: [
+      "/img/products/centrifugal-blowers-1.jpg",
+      "/img/products/centrifugal-blowers-2.jpg",
+      "/img/products/centrifugal-blowers-3.jpg",
       "/img/products/fd-fan.png",
       "/img/products/didw-fan.png",
       "/img/products/high-pressure-blower.png",
@@ -574,16 +629,60 @@ const PRODUCT_IMAGES: Record<string, { image: string; gallery?: string[] }> = {
       "/img/products/id-fan.jpg",
     ],
   },
-  "tube-axial-fan": { image: "/img/products/tube-axial-fan.jpg" },
-  "plug-fan": { image: "/img/products/plug-fan.jpg" },
+  "tube-axial-fan": {
+    image: "/img/products/tube-axial-fan.jpg",
+    gallery: [
+      "/img/products/tube-axial-fan-1.jpg",
+      "/img/products/tube-axial-fan-2.png",
+      "/img/products/tube-axial-fan-3.jpg",
+      "/img/products/tube-axial-fan-4.png",
+      "/img/products/tube-axial-fan-5.png",
+    ],
+  },
+  "plug-fan": {
+    image: "/img/products/plug-fan.jpg",
+    gallery: [
+      "/img/products/plug-fan-1.jpg",
+      "/img/products/plug-fan-2.jpg",
+      "/img/products/plug-fan-3.png",
+      "/img/products/plug-fan-4.jpg",
+      "/img/products/plug-fan-5.jpg",
+      "/img/products/plug-fan-6.png",
+    ],
+  },
   "flp-wall-mounting-exhaust-fan": { image: "/img/products/tube-axial-fan.jpg" }, // TODO: dedicated FLP exhaust fan photo (FLP + non-FLP variants)
   "inline-fans": { image: "/img/products/tube-axial-fan.jpg" }, // TODO: dedicated inline fan photo
-  "cabinet-fans": { image: "/img/products/blower.jpg" }, // TODO: dedicated cabinet fan photo
-  "air-handling-unit": { image: "/img/products/blower.jpg" }, // TODO: dedicated AHU photo
+  "cabinet-fans": {
+    image: "/img/products/cabinet-fans.jpg",
+    gallery: ["/img/products/cabinet-fans-1.jpg"],
+  },
+  "air-handling-unit": {
+    image: "/img/products/air-handling-unit.jpg",
+    gallery: [
+      "/img/products/air-handling-unit-1.png",
+      "/img/products/air-handling-unit-2.jpg",
+      "/img/products/air-handling-unit-3.jpg",
+      "/img/products/air-handling-unit-4.jpg",
+      "/img/products/air-handling-unit-5.jpg",
+    ],
+  },
   "filter-washing-systems": { image: "/img/feature.jpg" }, // TODO: dedicated filter-washing photo
   // Turnkey & Fabrication
   "turnkey-projects": { image: "/img/slider/company-photo.jpg" },
-  "custom-fabrication": { image: "/img/feature.jpg" },
+  "custom-fabrication": {
+    image: "/img/products/custom-fabrication.jpg",
+    gallery: [
+      "/img/products/custom-fabrication-1.jpg",
+      "/img/products/custom-fabrication-2.jpg",
+      "/img/products/custom-fabrication-3.jpg",
+      "/img/products/custom-fabrication-4.jpg",
+      "/img/products/custom-fabrication-5.jpg",
+      "/img/products/custom-fabrication-6.jpg",
+      "/img/products/custom-fabrication-7.jpg",
+      "/img/products/custom-fabrication-8.jpg",
+      "/img/products/custom-fabrication-9.jpg",
+    ],
+  },
 };
 
 const CATEGORY_IMAGES: Record<CategorySlug, string> = {
