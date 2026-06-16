@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MapPin, Phone, Mail, Clock, Download } from "lucide-react";
-import { Facebook, Linkedin, Instagram } from "./social-icons";
+import { Facebook, Linkedin, Instagram, X } from "./social-icons";
 import Logo from "./logo";
 import AirflowField from "./airflow-field";
 import { CATALOG } from "@/lib/products";
@@ -26,9 +26,10 @@ export default function SiteFooter() {
             <p className="mt-4 max-w-sm text-sm text-white/70">{SITE.positioning}</p>
             <p className="mt-4 font-display text-lg font-bold text-yellow">{SITE.tagline}</p>
             <div className="mt-5 flex items-center gap-3">
-              <a href={SITE.social.facebook} aria-label="Facebook" className="grid size-9 place-items-center rounded-lg bg-white/10 transition-colors hover:bg-yellow hover:text-ink"><Facebook className="size-4" /></a>
-              <a href={SITE.social.linkedin} aria-label="LinkedIn" className="grid size-9 place-items-center rounded-lg bg-white/10 transition-colors hover:bg-yellow hover:text-ink"><Linkedin className="size-4" /></a>
               <a href={SITE.social.instagram} aria-label="Instagram" className="grid size-9 place-items-center rounded-lg bg-white/10 transition-colors hover:bg-yellow hover:text-ink"><Instagram className="size-4" /></a>
+              <a href={SITE.social.facebook} aria-label="Facebook" className="grid size-9 place-items-center rounded-lg bg-white/10 transition-colors hover:bg-yellow hover:text-ink"><Facebook className="size-4" /></a>
+              <a href={SITE.social.x} aria-label="X (Twitter)" className="grid size-9 place-items-center rounded-lg bg-white/10 transition-colors hover:bg-yellow hover:text-ink"><X className="size-4" /></a>
+              <a href={SITE.social.linkedin} aria-label="LinkedIn" className="grid size-9 place-items-center rounded-lg bg-white/10 transition-colors hover:bg-yellow hover:text-ink"><Linkedin className="size-4" /></a>
             </div>
           </div>
 

@@ -36,6 +36,7 @@ export const SITE = {
     facebook: "#",
     linkedin: "#",
     instagram: "#",
+    x: "#",
   },
 } as const;
 
