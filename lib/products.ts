@@ -79,20 +79,22 @@ export const CATALOG: Category[] = [
         name: "Cyclone Separator",
         blurb: "Inertial pre-separator for coarse particulate — durable, no moving parts.",
         longDescription:
-          "The Cyclone Separator is an inertial pre-separator for coarse particulate. With no moving parts and rugged construction, it is highly durable and is often paired upstream of a bag filter to reduce dust load and protect downstream media, extending overall system life.",
+          "The Cyclone Separator is an inertial pre-separator built to withstand the abrasion of the very particulate it collects. With no moving parts, it spins the dust-laden gas to fling coarse particles to the wall and drop them out, cutting the dust load that reaches the final filter so the system can run at maximum efficiency. It is fabricated in hot-rolled plate or stainless steel, then cleaned, primed and painted in the customer's choice of standard colours.",
         features: [
-          "Removes coarse particulate by centrifugal force",
-          "No moving parts — minimal maintenance",
-          "Durable, rugged construction",
-          "Ideal as a pre-separator ahead of bag filters",
-          "Reduces load & extends downstream media life",
+          "Inertial separation — no moving parts to maintain",
+          "Abrasion-resistant construction for high-wear dust",
+          "Reduces dust load reaching the final filter",
+          "Lets a paired final filter run at peak efficiency",
+          "Hot-rolled plate or stainless-steel fabrication",
+          "Cleaned, primed & painted in a standard colour of choice",
         ],
         specs: [
           ["Type", "Inertial / centrifugal separator"],
           ["Moving parts", "None"],
-          ["Typical use", "Coarse pre-separation"],
-          ["Pairing", "Upstream of bag filters"],
-          ["Materials", "MS / SS as per application"],
+          ["Function", "Coarse pre-separation"],
+          ["Pairing", "Upstream of a final filter"],
+          ["Construction", "Hot-rolled plate / stainless steel"],
+          ["Finish", "Cleaned, primed & painted (standard colours)"],
         ],
         applications: ["Cement", "Steel", "Foundry", "Coal", "Engineering"],
       },
@@ -101,13 +103,14 @@ export const CATALOG: Category[] = [
         name: "BIBO Dust Collector",
         blurb: "Bag-In/Bag-Out contained-change collector for hazardous & toxic dust.",
         longDescription:
-          "The BIBO (Bag-In/Bag-Out) Dust Collector is a contained-change dust collector designed for hazardous, toxic and pharmaceutical dust. Filters are changed inside a sealed PVC bag so the operator is never exposed to the captured material, ensuring safe maintenance and full containment of potent compounds.",
+          "The BIBO (Bag-In/Bag-Out) Dust Collector is a safe-change collector for potent products — anti-cancer compounds, hormones and similar materials that mandate contained handling. Polybags restrict operator contact with the potent dust during filter changes, while the captured dust collects in a bag designed to be easily removed and replaced for fully contained disposal.",
         features: [
-          "Contained Bag-In/Bag-Out filter change",
-          "Zero operator exposure to captured dust",
-          "Designed for hazardous, toxic & potent dust",
+          "Bag-In/Bag-Out polybag safe-change method",
+          "Restricts operator contact with potent dust",
+          "For anti-cancer, hormone & similar potent products",
+          "Captured dust in an easily removed, replaceable bag",
+          "Fully contained disposal",
           "GMP-friendly for pharmaceutical processes",
-          "Sealed, leak-tested containment housing",
         ],
         specs: [
           ["Change method", "Bag-In / Bag-Out (contained)"],
@@ -142,19 +145,23 @@ export const CATALOG: Category[] = [
       {
         slug: "horizontal-dust-collector",
         name: "Horizontal Dust Collector",
-        blurb: "Space-efficient horizontal configuration for height-constrained layouts.",
+        blurb: "Pulse-jet baghouse in a height-constrained horizontal configuration.",
         longDescription:
-          "The Horizontal Dust Collector is a space-efficient, horizontally configured filtration unit for plant layouts with height constraints. It delivers reliable dedusting performance where a tall vertical collector cannot be accommodated.",
+          "The Horizontal Dust Collector is a pulse-jet baghouse arranged horizontally for height-constrained layouts, available in a range of designs to suit the application. Rapid high-pressure air jets send a shock of air through each bag to dislodge and discharge the dust cake, so the unit keeps running continuously with the fan on — generally without compartmentalisation. It is easily customised, handles a wide range of temperatures and pressures, and delivers high collection efficiency.",
         features: [
           "Horizontal layout for low-headroom sites",
-          "Reliable pulse-cleaned filtration",
-          "Compact, space-saving footprint",
-          "Customized to plant layout",
+          "High-pressure air-jet shock cleaning of each bag",
+          "Continuous operation with the fan running",
+          "Generally non-compartmentalised design",
+          "Handles a wide range of temperatures & pressures",
+          "High collection efficiency, easily customised",
         ],
         specs: [
-          ["Configuration", "Horizontal"],
-          ["Cleaning", "Pulse-jet"],
+          ["Configuration", "Horizontal pulse-jet baghouse"],
+          ["Cleaning", "Rapid high-pressure air-jet (shock pulse)"],
+          ["Operation", "Continuous, generally non-compartmentalised"],
           ["Best for", "Height-constrained layouts"],
+          ["Operating temp/pressure", "Wide range, as per application"],
           ["Materials", "MS / SS as per application"],
         ],
         applications: ["Engineering", "Cement", "Steel", "General Industry"],
@@ -164,19 +171,22 @@ export const CATALOG: Category[] = [
         name: "GMP Portable Dust Collector",
         blurb: "Mobile, GMP-compliant unit for pharma & clean point-of-source capture.",
         longDescription:
-          "The GMP Portable Dust Collector is a mobile, GMP-compliant unit for pharmaceutical and clean environments. It provides point-of-source dust capture and can be wheeled to wherever it is needed for dispensing, sampling, charging and similar operations.",
+          "The GMP Portable Dust Collector is a mobile, GMP-compliant unit for pharmaceutical and clean point-of-source capture, where airborne-particulate control is critical to compliance. It is custom-designed to collect dust-laden air from sifters, multi-mills, tablet compression, capsule and packing operations. Accessories — flexible hoses, capture hoods, pendants and adjustable arms — capture dust right at source to ensure containment.",
         features: [
-          "Mobile, wheel-mounted unit",
-          "GMP-compliant for pharma / clean areas",
-          "Point-of-source dust capture",
+          "Mobile, wheel-mounted GMP-compliant unit",
+          "Custom-designed for pharma point-of-source capture",
+          "Suits sifters, multi-mills, tablet compression, capsule & packing",
+          "Flexible hoses, capture hoods, pendants & adjustable arms",
+          "Captures dust at source to ensure containment",
           "HEPA filtration with safe-change option",
-          "Compact and easy to relocate",
         ],
         specs: [
           ["Mobility", "Castor-mounted, portable"],
           ["Compliance", "GMP"],
           ["Filtration", "Pre + HEPA"],
-          ["Use", "Point-of-source capture"],
+          ["Capture", "Hoods, pendants & adjustable arms at source"],
+          ["Use", "Sifting, milling, compression, capsule & packing"],
+          ["Materials", "SS construction"],
         ],
         applications: ["Pharmaceutical", "FMCG", "Cleanroom"],
       },
@@ -185,18 +195,21 @@ export const CATALOG: Category[] = [
         name: "Venturi Scrubber",
         blurb: "High-efficiency wet scrubbing for fine particulate & fume.",
         longDescription:
-          "The Venturi Scrubber delivers high-efficiency wet scrubbing for fine particulate and fume. Gas is accelerated through a high-velocity venturi throat where atomised scrubbing liquid captures sub-micron particles, making it ideal for sticky, hot or fine dust that is difficult for dry collection.",
+          "The Venturi Scrubber is a wet scrubber that removes fine particulate and fume from industrial exhaust by forcing the gas through a constricted Venturi throat. The throat accelerates the gas and creates a pressure drop that disperses the particulate and drives it to collide with injected liquid droplets; the wetted particulate is then separated from the cleaned gas. The result is high efficiency on fine, sub-micron particulate that is difficult for dry collection.",
         features: [
-          "High-velocity venturi throat for fine capture",
-          "Handles sticky, hot or sub-micron dust",
-          "Effective on fume and mist",
+          "Constricted Venturi throat accelerates the gas stream",
+          "Pressure drop drives particulate into liquid droplets",
+          "Wetted particulate separated from the cleaned gas",
+          "High efficiency on fine, sub-micron particulate",
+          "Effective on sticky, hot dust, fume and mist",
           "Robust wet-scrubbing construction",
-          "Adjustable throat for variable load",
         ],
         specs: [
-          ["Principle", "High-velocity venturi wet scrubbing"],
-          ["Target", "Fine particulate & fume"],
+          ["Principle", "Venturi-throat wet scrubbing"],
+          ["Target", "Fine / sub-micron particulate & fume"],
+          ["Mechanism", "Throat acceleration & liquid-droplet collision"],
           ["Liquid", "Water / reagent as per duty"],
+          ["Efficiency", "High on fine particulate"],
           ["Materials", "SS / PP-FRP as per application"],
         ],
         applications: ["Paint", "Chemical", "Foundry", "Steel"],
@@ -206,19 +219,46 @@ export const CATALOG: Category[] = [
         name: "Packed Bed Scrubber",
         blurb: "Gas absorption & neutralization of acidic or odorous gases.",
         longDescription:
-          "The Packed Bed Scrubber is designed for gas absorption and neutralization of acidic or odorous gases. The gas stream passes through packed media wetted with a scrubbing/neutralizing liquid, maximising contact area to absorb and neutralise pollutants before discharge.",
+          "The Packed Bed Scrubber is a gas-absorption tower filled with random or structured packing — plastic or ceramic — for neutralising acidic or odorous gases. The polluted gas passes through the bed in counter-current or cross-flow while scrubbing liquid (water or a chemical solution) is distributed over the packing through spray nozzles. The large gas–liquid contact area drives pollutant absorption by mass transfer before the cleaned gas is discharged.",
         features: [
-          "Absorbs & neutralizes acidic / odorous gases",
-          "High contact-area packed media",
+          "Random or structured packing — plastic or ceramic",
+          "Counter-current or cross-flow gas path",
+          "Spray nozzles distribute scrubbing liquid over the bed",
+          "Large gas–liquid contact area for high mass transfer",
+          "Absorbs & neutralises acidic / odorous gases",
           "Corrosion-resistant PP-FRP construction",
-          "Configurable reagent dosing",
-          "Effective odour & fume control",
         ],
         specs: [
-          ["Principle", "Packed-media gas absorption"],
+          ["Principle", "Packed-media gas absorption (mass transfer)"],
           ["Target", "Acidic / odorous gases"],
-          ["Media", "Random / structured packing"],
+          ["Flow", "Counter-current or cross-flow"],
+          ["Packing", "Random / structured, plastic or ceramic"],
+          ["Liquid", "Water or chemical solution via spray nozzles"],
           ["Materials", "PP-FRP / FRP"],
+        ],
+        applications: ["Chemical", "Pharmaceutical", "Paint", "Effluent / ETP"],
+      },
+      {
+        slug: "hybrid-scrubber",
+        name: "Hybrid Scrubber",
+        blurb: "Multi-technology scrubber combining Venturi and packed-bed stages.",
+        longDescription:
+          "The Hybrid Scrubber combines multiple technologies in a single train for demanding pollutant-removal duties — typically a Venturi scrubber followed by a packed-bed scrubber, with added stages for gas absorption or chemical reaction. Capturing both fine particulate and soluble or reactive gases in one system, it is configured to suit the specific application.",
+        features: [
+          "Combines Venturi + packed-bed scrubbing in one train",
+          "Venturi stage captures fine, sub-micron particulate",
+          "Packed-bed stage absorbs acidic or odorous gases",
+          "Optional stages for gas absorption or chemical reaction",
+          "Handles mixed particulate-and-gas pollutant streams",
+          "Configured to suit the specific application",
+        ],
+        specs: [
+          ["Principle", "Multi-stage wet scrubbing"],
+          ["Stages", "Venturi + packed-bed (+ absorption / reaction)"],
+          ["Target", "Fine particulate & soluble / reactive gases"],
+          ["Liquid", "Water / chemical reagent as per duty"],
+          ["Configuration", "As per application"],
+          ["Materials", "SS / PP-FRP as per application"],
         ],
         applications: ["Chemical", "Pharmaceutical", "Paint", "Effluent / ETP"],
       },
@@ -251,7 +291,7 @@ export const CATALOG: Category[] = [
     tag: "HVAC",
     icon: "Fan",
     blurb:
-      "Centrifugal blowers, axial & inline fans, AHUs and filter-washing systems engineered for efficient air movement.",
+      "Centrifugal blowers, axial fans, plug fans, cabinet fans and AHUs engineered for efficient air movement.",
     products: [
       {
         slug: "centrifugal-blowers",
@@ -289,59 +329,48 @@ export const CATALOG: Category[] = [
         name: "Tube Axial Fan",
         blurb: "High-volume, low-to-medium pressure ventilation airflow.",
         longDescription:
-          "The Tube Axial Fan moves high volumes of air at low-to-medium static pressure. Compact and duct-mountable, it is ideal for general ventilation, exhaust and fresh-air supply where large airflow is needed at modest pressure.",
+          "The Tube Axial Fan is a high-volume, low-to-medium-pressure axial fan for exhausting dirty air or fumes — such as from paint spray booths — supplying fresh air, and spot-cooling people, rooms or machinery. It is available direct-driven, with the propeller on the motor shaft, or belt-driven, keeping the motor outside the airstream and away from high temperature, dirt or caustic contaminants. Typically built in mild steel, with aluminium or all-aluminium propellers for spark resistance and stainless steel or coatings for chemical resistance.",
         features: [
-          "High-volume airflow at low/medium pressure",
-          "Compact, duct-mountable design",
-          "Efficient general ventilation & exhaust",
-          "Selectable blade & hub for duty",
+          "High-volume airflow at low-to-medium pressure",
+          "Exhausts dirty air & fumes, e.g. paint spray booths",
+          "Fresh-air supply and spot-cooling duties",
+          "Direct-drive (propeller on shaft) or belt-drive options",
+          "Belt drive keeps the motor out of the airstream",
+          "Spark-resistant aluminium props; SS / coatings for chemicals",
         ],
         specs: [
           ["Type", "Tube axial"],
           ["Flow", "High volume"],
-          ["Pressure", "Low to medium"],
-          ["Mounting", "In-duct / inline"],
+          ["Pressure", "Low to medium static"],
+          ["Drive", "Direct (propeller on shaft) or belt"],
+          ["Construction", "Mild steel; SS / coatings for chemical duty"],
+          ["Propeller", "Aluminium / all-aluminium for spark resistance"],
         ],
-        applications: ["Engineering", "General Ventilation", "Warehousing"],
+        applications: ["Paint", "Engineering", "General Ventilation", "Warehousing"],
       },
       {
         slug: "plug-fan",
         name: "Plug Fan",
-        blurb: "Direct-drive plenum fan for AHUs and clean-air systems.",
+        blurb: "Unhoused backward-inclined plenum fan for AHUs and clean-air systems.",
         longDescription:
-          "The Plug Fan is a direct-drive plenum fan for AHUs and clean-air systems. Its housingless design is compact and efficient, allowing flexible discharge and easy integration into air-handling units and cleanroom plenums.",
+          "The Plug Fan is an unhoused, backward-inclined centrifugal (plenum) fan for supply, exhaust or recirculation duty in AHUs and clean-air systems. It relies on the surrounding plenum to direct airflow, keeping the motor, bearings and drives out of the airstream — so it suits clean, contaminated and high-temperature systems alike. It is built to a wide duty range and mounts either horizontally or vertically.",
         features: [
-          "Direct-drive, housingless plenum design",
-          "Compact & efficient for AHUs",
-          "Flexible discharge direction",
-          "Ideal for clean-air & cleanroom systems",
+          "Unhoused backward-inclined plenum design",
+          "Supply, exhaust or recirculation duty",
+          "Motor, bearings & drives kept out of the airstream",
+          "Suits clean, contaminated & high-temperature systems",
+          "Belt or direct drive; horizontal or vertical mounting",
+          "Flexible discharge for AHU & cleanroom integration",
         ],
         specs: [
-          ["Type", "Plenum / plug fan"],
-          ["Drive", "Direct drive"],
-          ["Best for", "AHUs & clean-air systems"],
-          ["Control", "VFD-ready"],
+          ["Type", "Backward-inclined plenum (plug) fan"],
+          ["Flow", "Up to 150,000 m³/hr"],
+          ["Pressure", "Up to 150 mm WC"],
+          ["Operating temp", "Up to 800 °C"],
+          ["Drive", "Belt or direct"],
+          ["Mounting", "Horizontal or vertical"],
         ],
-        applications: ["Pharmaceutical", "Cleanroom", "HVAC"],
-      },
-      {
-        slug: "inline-fans",
-        name: "Inline Fans",
-        blurb: "Duct-mounted inline ventilation for compact installs.",
-        longDescription:
-          "Inline Fans are duct-mounted ventilation fans that fit directly within ductwork. They provide reliable booster and exhaust airflow in a compact, space-saving form ideal for retrofits and tight services.",
-        features: [
-          "Mounts directly in-duct",
-          "Compact, space-saving installation",
-          "Reliable booster & exhaust airflow",
-          "Quiet, balanced operation",
-        ],
-        specs: [
-          ["Type", "Inline duct fan"],
-          ["Mounting", "In-duct"],
-          ["Use", "Booster / exhaust ventilation"],
-        ],
-        applications: ["Commercial HVAC", "Engineering", "General Ventilation"],
+        applications: ["HVAC", "Textile", "Paint", "Pharmaceutical", "Cleanroom"],
       },
       {
         slug: "cabinet-fans",
@@ -383,25 +412,6 @@ export const CATALOG: Category[] = [
           ["Materials", "GI / SS / Aluminium frame"],
         ],
         applications: ["Pharmaceutical", "Cleanroom", "Commercial HVAC", "Hospital"],
-      },
-      {
-        slug: "filter-washing-systems",
-        name: "Filter Washing Systems",
-        blurb: "Automated cleaning systems for filter maintenance & reuse.",
-        longDescription:
-          "Filter Washing Systems automate the cleaning of filters for maintenance and reuse. By restoring filter media to service condition, they reduce consumable cost and downtime while maintaining consistent air quality.",
-        features: [
-          "Automated filter cleaning",
-          "Extends filter life — reduces consumables",
-          "Lowers maintenance downtime",
-          "Consistent restored performance",
-        ],
-        specs: [
-          ["Type", "Automated washing system"],
-          ["Benefit", "Filter reuse & cost saving"],
-          ["Use", "Filter maintenance"],
-        ],
-        applications: ["Textile", "Automotive", "General Industry"],
       },
     ],
   },
@@ -466,9 +476,11 @@ export const CATALOG: Category[] = [
 export const FALLBACK_IMAGE = "/img/feature.jpg";
 
 /**
- * Real photography mirrored from the live Universal Air Technologies site into
- * /public/img. Where the source had no dedicated image, a category-appropriate
- * confirmed photo is reused (marked TODO) so no card ever renders empty/broken.
+ * Real client photography stored under /public/img/products. Files were supplied
+ * by the client and renamed to clean, slug-based, URL-safe names (primary
+ * <slug>.jpg, gallery <slug>-N.ext). Where the client supplied no dedicated
+ * photo, a category-appropriate confirmed photo is reused (marked TODO) so no
+ * card ever renders empty/broken.
  */
 const PRODUCT_IMAGES: Record<string, { image: string; gallery?: string[] }> = {
   // Air Pollution Control
@@ -479,20 +491,74 @@ const PRODUCT_IMAGES: Record<string, { image: string; gallery?: string[] }> = {
       "/img/products/pulse-jet-system2.png",
       "/img/products/pulse-jet-system3.png",
       "/img/products/pulse-jet-system4.png",
+      "/img/products/pulse-jet-bag-filter-install-1.jpg",
+      "/img/products/pulse-jet-bag-filter-install-2.jpg",
     ],
   },
-  "cyclone-separator": { image: "/img/products/horizontal-dust-collector.jpg" }, // TODO: dedicated cyclone photo
-  "bibo-dust-collector": { image: "/img/products/bibo-dust-collector.jpg" },
-  "bibo-units": { image: "/img/products/bibo-dust-collector.jpg" }, // TODO: dedicated BIBO units photo
-  "horizontal-dust-collector": { image: "/img/products/horizontal-dust-collector.jpg" },
-  "gmp-portable-dust-collector": { image: "/img/products/gmp-portable-dust-collector.jpg" },
-  "venturi-scrubber": { image: "/img/products/venturi-scrubber.jpg" },
-  "packed-bed-scrubber": { image: "/img/products/packed-bed-scrubber.jpg" },
-  "de-dusting-tunnels": { image: "/img/products/gmp-portable-dust-collector.jpg" }, // TODO: dedicated de-dusting tunnel photo
+  "cyclone-separator": { image: "/img/products/cyclone-separator.jpg" },
+  "bibo-dust-collector": {
+    image: "/img/products/bibo-dust-collector.jpg",
+    gallery: ["/img/products/bibo-dust-collector-1.jpg"],
+  },
+  "bibo-units": {
+    image: "/img/products/bibo-units.jpg",
+    gallery: ["/img/products/bibo-units-1.jpg"],
+  },
+  "horizontal-dust-collector": {
+    image: "/img/products/horizontal-dust-collector.jpg",
+    gallery: [
+      "/img/products/horizontal-dust-collector-1.jpg",
+      "/img/products/horizontal-dust-collector-2.png",
+    ],
+  },
+  "gmp-portable-dust-collector": {
+    image: "/img/products/gmp-portable-dust-collector.jpg",
+    gallery: [
+      "/img/products/gmp-portable-dust-collector-1.png",
+      "/img/products/gmp-portable-dust-collector-2.png",
+      "/img/products/gmp-portable-dust-collector-3.png",
+      "/img/products/gmp-portable-dust-collector-4.png",
+    ],
+  },
+  "venturi-scrubber": {
+    image: "/img/products/venturi-scrubber.jpg",
+    gallery: [
+      "/img/products/venturi-scrubber-1.jpg",
+      "/img/products/venturi-scrubber-2.png",
+    ],
+  },
+  "packed-bed-scrubber": {
+    image: "/img/products/packed-bed-scrubber.jpg",
+    gallery: [
+      "/img/products/packed-bed-scrubber-1.png",
+      "/img/products/packed-bed-scrubber-2.png",
+    ],
+  },
+  "hybrid-scrubber": {
+    image: "/img/products/hybrid-scrubber.png",
+    gallery: [
+      "/img/products/hybrid-scrubber-1.png",
+      "/img/products/hybrid-scrubber-2.png",
+      "/img/products/hybrid-scrubber-3.png",
+      "/img/products/hybrid-scrubber-4.png",
+    ],
+  },
+  "de-dusting-tunnels": {
+    image: "/img/products/de-dusting-tunnels.jpg",
+    gallery: [
+      "/img/products/de-dusting-tunnels-1.jpg",
+      "/img/products/de-dusting-tunnels-2.jpg",
+      "/img/products/de-dusting-tunnels-3.jpg",
+      "/img/products/de-dusting-tunnels-4.jpg",
+    ],
+  },
   // HVAC
   "centrifugal-blowers": {
-    image: "/img/products/blower.jpg",
+    image: "/img/products/centrifugal-blowers.jpg",
     gallery: [
+      "/img/products/centrifugal-blowers-1.jpg",
+      "/img/products/centrifugal-blowers-2.jpg",
+      "/img/products/centrifugal-blowers-3.jpg",
       "/img/products/fd-fan.png",
       "/img/products/didw-fan.png",
       "/img/products/high-pressure-blower.png",
@@ -500,15 +566,57 @@ const PRODUCT_IMAGES: Record<string, { image: string; gallery?: string[] }> = {
       "/img/products/id-fan.jpg",
     ],
   },
-  "tube-axial-fan": { image: "/img/products/tube-axial-fan.jpg" },
-  "plug-fan": { image: "/img/products/plug-fan.jpg" },
-  "inline-fans": { image: "/img/products/tube-axial-fan.jpg" }, // TODO: dedicated inline fan photo
-  "cabinet-fans": { image: "/img/products/blower.jpg" }, // TODO: dedicated cabinet fan photo
-  "air-handling-unit": { image: "/img/products/blower.jpg" }, // TODO: dedicated AHU photo
-  "filter-washing-systems": { image: "/img/feature.jpg" }, // TODO: dedicated filter-washing photo
+  "tube-axial-fan": {
+    image: "/img/products/tube-axial-fan.jpg",
+    gallery: [
+      "/img/products/tube-axial-fan-1.jpg",
+      "/img/products/tube-axial-fan-2.png",
+      "/img/products/tube-axial-fan-3.jpg",
+      "/img/products/tube-axial-fan-4.png",
+      "/img/products/tube-axial-fan-5.png",
+    ],
+  },
+  "plug-fan": {
+    image: "/img/products/plug-fan.jpg",
+    gallery: [
+      "/img/products/plug-fan-1.jpg",
+      "/img/products/plug-fan-2.jpg",
+      "/img/products/plug-fan-3.png",
+      "/img/products/plug-fan-4.jpg",
+      "/img/products/plug-fan-5.jpg",
+      "/img/products/plug-fan-6.png",
+    ],
+  },
+  "cabinet-fans": {
+    image: "/img/products/cabinet-fans.jpg",
+    gallery: ["/img/products/cabinet-fans-1.jpg"],
+  },
+  "air-handling-unit": {
+    image: "/img/products/air-handling-unit.jpg",
+    gallery: [
+      "/img/products/air-handling-unit-1.png",
+      "/img/products/air-handling-unit-2.jpg",
+      "/img/products/air-handling-unit-3.jpg",
+      "/img/products/air-handling-unit-4.jpg",
+      "/img/products/air-handling-unit-5.jpg",
+    ],
+  },
   // Turnkey & Fabrication
   "turnkey-projects": { image: "/img/slider/company-photo.jpg" },
-  "custom-fabrication": { image: "/img/feature.jpg" },
+  "custom-fabrication": {
+    image: "/img/products/custom-fabrication.jpg",
+    gallery: [
+      "/img/products/custom-fabrication-1.jpg",
+      "/img/products/custom-fabrication-2.jpg",
+      "/img/products/custom-fabrication-3.jpg",
+      "/img/products/custom-fabrication-4.jpg",
+      "/img/products/custom-fabrication-5.jpg",
+      "/img/products/custom-fabrication-6.jpg",
+      "/img/products/custom-fabrication-7.jpg",
+      "/img/products/custom-fabrication-8.jpg",
+      "/img/products/custom-fabrication-9.jpg",
+    ],
+  },
 };
 
 const CATEGORY_IMAGES: Record<CategorySlug, string> = {
