@@ -291,7 +291,7 @@ export const CATALOG: Category[] = [
     tag: "HVAC",
     icon: "Fan",
     blurb:
-      "Centrifugal blowers, axial & inline fans, AHUs and filter-washing systems engineered for efficient air movement.",
+      "Centrifugal blowers, axial fans, plug fans, cabinet fans and AHUs engineered for efficient air movement.",
     products: [
       {
         slug: "centrifugal-blowers",
@@ -373,50 +373,6 @@ export const CATALOG: Category[] = [
         applications: ["HVAC", "Textile", "Paint", "Pharmaceutical", "Cleanroom"],
       },
       {
-        slug: "flp-wall-mounting-exhaust-fan",
-        name: "FLP Wall Mounting Exhaust Fan",
-        blurb: "Wall-mounting box-type exhaust fan in flameproof & non-flameproof types.",
-        longDescription:
-          "The FLP Wall Mounting Exhaust Fan is a wall-mounting, box-type exhaust fan offered in two categories — Flameproof (FLP) for hazardous areas and Non-Flameproof for general duty. The casing is MS-fabricated with an epoxy-painted or MS powder-coated finish and a Cast Aluminium or PP impeller. A safety guard sits on the room side, a rain cowl and bird screen on the outside, and a 10-micron filter with a 20-micron Velcro filter is fitted inside the room.",
-        variants: ["Flameproof (FLP)", "Non-Flameproof"],
-        features: [
-          "Flameproof (FLP) and Non-Flameproof versions",
-          "Wall-mounting, box-type construction",
-          "MS-fabricated casing, epoxy-painted / MS powder-coated",
-          "Cast Aluminium or PP impeller",
-          "Room-side safety guard; rain cowl & bird screen outside",
-          "10-micron filter with 20-micron Velcro filter inside the room",
-        ],
-        specs: [
-          ["Type", "Wall-mounting box-type exhaust fan"],
-          ["Categories", "Flameproof (FLP) / Non-Flameproof"],
-          ["Casing", "MS, epoxy-painted / MS powder-coated"],
-          ["Impeller", "Cast Aluminium / PP"],
-          ["Protection", "Safety guard, rain cowl & bird screen"],
-          ["Filtration", "10-micron + 20-micron Velcro filter"],
-        ],
-        applications: ["Chemical", "Pharmaceutical", "Engineering", "General Ventilation"],
-      },
-      {
-        slug: "inline-fans",
-        name: "Inline Fans",
-        blurb: "Duct-mounted inline ventilation for compact installs.",
-        longDescription:
-          "Inline Fans are duct-mounted ventilation fans that fit directly within ductwork. They provide reliable booster and exhaust airflow in a compact, space-saving form ideal for retrofits and tight services.",
-        features: [
-          "Mounts directly in-duct",
-          "Compact, space-saving installation",
-          "Reliable booster & exhaust airflow",
-          "Quiet, balanced operation",
-        ],
-        specs: [
-          ["Type", "Inline duct fan"],
-          ["Mounting", "In-duct"],
-          ["Use", "Booster / exhaust ventilation"],
-        ],
-        applications: ["Commercial HVAC", "Engineering", "General Ventilation"],
-      },
-      {
         slug: "cabinet-fans",
         name: "Cabinet Fans",
         blurb: "Acoustically treated cabinet ventilation units.",
@@ -456,25 +412,6 @@ export const CATALOG: Category[] = [
           ["Materials", "GI / SS / Aluminium frame"],
         ],
         applications: ["Pharmaceutical", "Cleanroom", "Commercial HVAC", "Hospital"],
-      },
-      {
-        slug: "filter-washing-systems",
-        name: "Filter Washing Systems",
-        blurb: "Automated cleaning systems for filter maintenance & reuse.",
-        longDescription:
-          "Filter Washing Systems automate the cleaning of filters for maintenance and reuse. By restoring filter media to service condition, they reduce consumable cost and downtime while maintaining consistent air quality.",
-        features: [
-          "Automated filter cleaning",
-          "Extends filter life — reduces consumables",
-          "Lowers maintenance downtime",
-          "Consistent restored performance",
-        ],
-        specs: [
-          ["Type", "Automated washing system"],
-          ["Benefit", "Filter reuse & cost saving"],
-          ["Use", "Filter maintenance"],
-        ],
-        applications: ["Textile", "Automotive", "General Industry"],
       },
     ],
   },
@@ -650,8 +587,6 @@ const PRODUCT_IMAGES: Record<string, { image: string; gallery?: string[] }> = {
       "/img/products/plug-fan-6.png",
     ],
   },
-  "flp-wall-mounting-exhaust-fan": { image: "/img/products/tube-axial-fan.jpg" }, // TODO: dedicated FLP exhaust fan photo (FLP + non-FLP variants)
-  "inline-fans": { image: "/img/products/tube-axial-fan.jpg" }, // TODO: dedicated inline fan photo
   "cabinet-fans": {
     image: "/img/products/cabinet-fans.jpg",
     gallery: ["/img/products/cabinet-fans-1.jpg"],
@@ -666,7 +601,6 @@ const PRODUCT_IMAGES: Record<string, { image: string; gallery?: string[] }> = {
       "/img/products/air-handling-unit-5.jpg",
     ],
   },
-  "filter-washing-systems": { image: "/img/feature.jpg" }, // TODO: dedicated filter-washing photo
   // Turnkey & Fabrication
   "turnkey-projects": { image: "/img/slider/company-photo.jpg" },
   "custom-fabrication": {
