@@ -118,6 +118,30 @@
     /* clip (not hidden) prevents stray horizontal scroll without breaking position: sticky */
     overflow-x: clip;
   }
+  /* Slim, on-brand scrollbar (pointer devices) so the gutter beside full-bleed
+     sections reads as intentional rather than a stray grey strip. */
+  @media (pointer: fine) {
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: color-mix(in srgb, var(--color-blue) 65%, transparent) transparent;
+    }
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: color-mix(in srgb, var(--color-blue) 60%, transparent);
+      border-radius: 9999px;
+      border: 2px solid transparent;
+      background-clip: content-box;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: var(--color-blue);
+    }
+  }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;

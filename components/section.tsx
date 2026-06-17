@@ -25,7 +25,7 @@ export function Section({
 }) {
   return (
     <section id={id} className={cn(tones[tone], py, "relative", className)}>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">{children}</div>
+      <div className="mx-auto max-w-[90rem] px-4 sm:px-6">{children}</div>
     </section>
   );
 }
@@ -58,7 +58,7 @@ export function Heading({
           {eyebrow}
         </div>
       )}
-      <h2 className={cn("font-display font-bold leading-[1.05] text-balance text-[clamp(1.85rem,4vw,2.7rem)]", light ? "text-white" : "text-ink")}>
+      <h2 className={cn("font-display font-bold leading-[1.05] text-balance text-[clamp(2rem,4vw,3.1rem)]", light ? "text-white" : "text-ink")}>
         {title}
       </h2>
       {sub && <p className={cn("mt-4 text-base md:text-lg", light ? "text-white/75" : "text-slate")}>{sub}</p>}

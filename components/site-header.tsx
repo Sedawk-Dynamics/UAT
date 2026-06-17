@@ -65,7 +65,7 @@ export default function SiteHeader() {
     <header className={cn("fixed inset-x-0 top-0 z-60 transition-all duration-300", scrolled ? "bg-white/95 shadow-[0_1px_2px_rgba(11,18,32,0.04),0_10px_30px_rgba(11,18,32,0.06)] backdrop-blur" : "bg-white")}>
       {/* Utility bar */}
       <div className={cn("overflow-hidden bg-blue-deep text-xs text-white/90 transition-all duration-300", scrolled ? "max-h-0 opacity-0" : "max-h-12 opacity-100")}>
-        <div className="mx-auto flex h-9 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
+        <div className="mx-auto flex h-9 max-w-[90rem] items-center justify-between gap-3 px-4 sm:px-6">
           <div className="flex min-w-0 items-center gap-4 sm:gap-5">
             <a href={SITE.phoneHref} className="hidden items-center gap-1.5 hover:text-yellow sm:flex"><Phone className="size-3.5" />{SITE.phone}</a>
             <a href={`mailto:${SITE.email}`} className="flex min-w-0 items-center gap-1.5 hover:text-yellow"><Mail className="size-3.5 shrink-0" /><span className="truncate">{SITE.email}</span></a>
@@ -81,9 +81,9 @@ export default function SiteHeader() {
       </div>
 
       {/* Main bar — relative so the mega panel can anchor to the full container width */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+      <div className="mx-auto max-w-[90rem] px-4 sm:px-6">
         <div className={cn("relative flex items-center justify-between gap-4 transition-all duration-300", scrolled ? "h-16" : "h-20")}>
-          <Link href="/" aria-label="UAT home" className="shrink-0"><Logo priority className="h-8 sm:h-10" /></Link>
+          <Link href="/" aria-label="UAT home" className="shrink-0"><Logo priority className="h-10 sm:h-12" /></Link>
 
           {/* Desktop nav */}
           <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">

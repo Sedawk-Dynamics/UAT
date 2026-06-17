@@ -15,7 +15,7 @@ export default function FeaturedProducts() {
 
   return (
     <section className="bg-white py-20 md:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+      <div className="mx-auto max-w-[90rem] px-4 sm:px-6">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <Heading eyebrow="Featured Products" title="Engineered for performance & compliance" />
           <Tabs value={filter} onValueChange={setFilter}>

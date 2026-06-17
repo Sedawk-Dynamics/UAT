@@ -31,6 +31,22 @@ export default function Hero() {
     };
   }, [embla, onSelect]);
 
+  // Re-measure once the page has fully settled. Late-loading images and the
+  // vertical scrollbar appearing after first paint can leave embla's initial
+  // measurement stale, which shows as a mis-sized slide / gap on the right.
+  useEffect(() => {
+    if (!embla) return;
+    const reInit = () => embla.reInit();
+    const id = window.setTimeout(reInit, 250);
+    window.addEventListener("load", reInit);
+    window.addEventListener("resize", reInit);
+    return () => {
+      window.clearTimeout(id);
+      window.removeEventListener("load", reInit);
+      window.removeEventListener("resize", reInit);
+    };
+  }, [embla]);
+
   useEffect(() => {
     if (!embla || reduce || paused) return;
     const t = setInterval(() => embla.scrollNext(), AUTOPLAY);
@@ -39,7 +55,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative flex min-h-[92vh] items-center overflow-hidden bg-blue-deep"
+      className="relative flex min-h-[92vh] w-screen mx-[calc(50%-50vw)] items-center overflow-hidden bg-blue-deep"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -84,7 +100,7 @@ export default function Hero() {
       <AirflowField className="opacity-70" />
 
       {/* Foreground copy (crossfades with the active slide) */}
-      <div className="relative mx-auto w-full max-w-7xl px-4 pb-24 pt-28 sm:px-6">
+      <div className="relative mx-auto w-full max-w-[90rem] px-4 pb-24 pt-28 sm:px-6">
         <div className="max-w-3xl">
           <AnimatePresence mode="wait">
             <motion.div
@@ -100,7 +116,7 @@ export default function Hero() {
             </motion.div>
           </AnimatePresence>
 
-          <h1 className="font-display text-[clamp(2.25rem,6vw,4rem)] font-bold leading-[1.04] text-white">
+          <h1 className="font-display text-[clamp(2.5rem,5.6vw,4.75rem)] font-bold leading-[1.04] text-white">
             <AnimatePresence mode="wait">
               <motion.span key={`title-${selected}`} className="inline-block">
                 {HERO_SLIDES[selected].title.split(" ").map((word, wi) => (
@@ -125,7 +141,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5, delay: 0.25 }}
-              className="mt-5 max-w-2xl text-lg text-white/80"
+              className="mt-5 max-w-2xl text-lg text-white/80 md:text-xl"
             >
               {HERO_SLIDES[selected].sub}
             </motion.p>

@@ -19,10 +19,10 @@ export default function SiteFooter() {
   return (
     <footer className="relative overflow-hidden bg-blue-deep text-white/80">
       <AirflowField className="h-40 opacity-25" interactive={false} />
-      <div className="relative mx-auto max-w-7xl px-4 pb-8 pt-16 sm:px-6">
+      <div className="relative mx-auto max-w-[90rem] px-4 pb-8 pt-16 sm:px-6">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <Logo variant="light" />
+            <Logo variant="light" className="h-12" />
             <p className="mt-4 max-w-sm text-sm text-white/70">{SITE.positioning}</p>
             <p className="mt-4 font-display text-lg font-bold text-yellow">{SITE.tagline}</p>
             <div className="mt-5 flex items-center gap-3">
