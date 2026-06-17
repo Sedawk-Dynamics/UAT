@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import useEmblaCarousel from "embla-carousel-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ArrowRight, Check } from "lucide-react";
 import Image from "next/image";
@@ -14,44 +13,20 @@ const AUTOPLAY = 6000;
 
 export default function Hero() {
   const reduce = useReducedMotion();
-  const [emblaRef, embla] = useEmblaCarousel({ loop: true, duration: 32 });
   const [selected, setSelected] = useState(0);
   const [paused, setPaused] = useState(false);
 
-  const onSelect = useCallback(() => {
-    if (embla) setSelected(embla.selectedScrollSnap());
-  }, [embla]);
+  const go = useCallback((idx: number) => {
+    setSelected((idx + HERO_SLIDES.length) % HERO_SLIDES.length);
+  }, []);
 
+  // Auto-advance. The timer is keyed on `selected`, so it resets whenever the
+  // slide changes (e.g. a dot click) and each slide gets a full interval.
   useEffect(() => {
-    if (!embla) return;
-    embla.on("select", onSelect);
-    onSelect();
-    return () => {
-      embla.off("select", onSelect);
-    };
-  }, [embla, onSelect]);
-
-  // Re-measure once the page has fully settled. Late-loading images and the
-  // vertical scrollbar appearing after first paint can leave embla's initial
-  // measurement stale, which shows as a mis-sized slide / gap on the right.
-  useEffect(() => {
-    if (!embla) return;
-    const reInit = () => embla.reInit();
-    const id = window.setTimeout(reInit, 250);
-    window.addEventListener("load", reInit);
-    window.addEventListener("resize", reInit);
-    return () => {
-      window.clearTimeout(id);
-      window.removeEventListener("load", reInit);
-      window.removeEventListener("resize", reInit);
-    };
-  }, [embla]);
-
-  useEffect(() => {
-    if (!embla || reduce || paused) return;
-    const t = setInterval(() => embla.scrollNext(), AUTOPLAY);
-    return () => clearInterval(t);
-  }, [embla, reduce, paused]);
+    if (reduce || paused) return;
+    const t = window.setTimeout(() => go(selected + 1), AUTOPLAY);
+    return () => window.clearTimeout(t);
+  }, [selected, paused, reduce, go]);
 
   return (
     <section
@@ -59,16 +34,26 @@ export default function Hero() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Ken-Burns image slides */}
-      <div className="absolute inset-0" ref={emblaRef}>
-        <div className="flex h-full">
-          {HERO_SLIDES.map((s, i) => (
-            <div key={i} className="relative h-full min-w-0 flex-[0_0_100%]">
+      {/* Crossfading full-cover Ken-Burns slides. Stacked (not a horizontal
+          track), so each image always fills the hero edge-to-edge — no carousel
+          measurement, no sliver of the next slide, no gap on the right. */}
+      <div className="absolute inset-0">
+        {HERO_SLIDES.map((s, i) => {
+          const active = selected === i;
+          return (
+            <motion.div
+              key={i}
+              aria-hidden={!active}
+              className="absolute inset-0"
+              initial={false}
+              animate={{ opacity: active ? 1 : 0 }}
+              transition={{ duration: 1.1, ease: "easeInOut" }}
+            >
               <motion.div
-                initial={reduce ? {} : { scale: 1.08 }}
-                animate={selected === i && !reduce ? { scale: 1.2 } : { scale: 1.08 }}
-                transition={{ duration: AUTOPLAY / 1000 + 1.5, ease: "linear" }}
                 className="absolute inset-0"
+                initial={{ scale: 1.04 }}
+                animate={reduce ? { scale: 1.04 } : { scale: active ? 1.12 : 1.04 }}
+                transition={{ duration: AUTOPLAY / 1000 + 2, ease: "linear" }}
               >
                 <Image
                   src={s.image}
@@ -82,9 +67,9 @@ export default function Hero() {
               {/* left→right blue scrim for text legibility */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-deep/95 via-blue-deep/80 to-blue-deep/40" />
               <div className="absolute inset-0 bg-blue-deep/20 mix-blend-multiply" />
-            </div>
-          ))}
-        </div>
+            </motion.div>
+          );
+        })}
       </div>
 
       <div className="absolute inset-0 blueprint opacity-50" />
@@ -166,7 +151,7 @@ export default function Hero() {
           <button
             key={idx}
             aria-label={`Go to slide ${idx + 1}`}
-            onClick={() => embla?.scrollTo(idx)}
+            onClick={() => go(idx)}
             className="relative h-2 overflow-hidden rounded-full transition-all"
             style={{ width: idx === selected ? "2rem" : "0.5rem" }}
           >
