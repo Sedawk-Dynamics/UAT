@@ -93,17 +93,17 @@ export interface Industry {
 
 export const INDUSTRIES: Industry[] = [
   { name: "Thermal Power Plants", icon: "Zap", note: "Dust collection & FD/ID draft fans for boiler & ash handling.", image: "/img/products/id-fan.jpg" },
-  { name: "Coal", icon: "Mountain", note: "Bag houses & cyclones for coal handling and crushing dust.", image: "/img/products/horizontal-dust-collector.jpg" },
+  { name: "Coal", icon: "Mountain", note: "Bag houses & cyclones for coal handling and crushing dust.", image: "/img/products/cyclone-separator.jpg" },
   { name: "Cement", icon: "Building2", note: "Bag houses & high-temperature ID fans across the process.", image: "/img/products/puls-jet-bag-filtter.jpg" },
-  { name: "Engineering", icon: "Cog", note: "Fume extraction, ventilation & custom fabricated ducting.", image: "/img/feature.jpg" },
+  { name: "Engineering", icon: "Cog", note: "Fume extraction, ventilation & custom fabricated ducting.", image: "/img/products/custom-fabrication.jpg" },
   { name: "Pharmaceutical", icon: "FlaskConical", note: "BIBO + GMP portable collectors and cleanroom AHUs.", image: "/img/products/gmp-portable-dust-collector.jpg" },
-  { name: "Textile", icon: "Shirt", note: "Filter washing systems, de-dusting & humidity AHUs.", image: "/img/products/tube-axial-fan.jpg" },
+  { name: "Textile", icon: "Shirt", note: "Filter washing systems, de-dusting & humidity AHUs.", image: "/img/products/air-handling-unit.jpg" },
   { name: "Sugar", icon: "Leaf", note: "Wet scrubbers & ID fans for bagasse-fired boilers.", image: "/img/products/packed-bed-scrubber.jpg" },
-  { name: "Steel", icon: "Hammer", note: "Heavy-duty pulse-jet bag filters & fume capture.", image: "/img/products/bibo-dust-collector.jpg" },
-  { name: "Ceramic", icon: "Pyramid", note: "Centrifugal blowers, spray-dryer & kiln dedusting.", image: "/img/products/blower.jpg" },
-  { name: "Foundry", icon: "Flame", note: "Bag filters & blowers for melting & shake-out fume.", image: "/img/slider/company-photo.jpg" },
+  { name: "Steel", icon: "Hammer", note: "Heavy-duty pulse-jet bag filters & fume capture.", image: "/img/products/pulse-jet-bag-filter-install-1.jpg" },
+  { name: "Ceramic", icon: "Pyramid", note: "Centrifugal blowers, spray-dryer & kiln dedusting.", image: "/img/products/centrifugal-blowers.jpg" },
+  { name: "Foundry", icon: "Flame", note: "Bag filters & blowers for melting & shake-out fume.", image: "/img/products/high-pressure-blower.png" },
   { name: "Paint", icon: "SprayCan", note: "Venturi scrubbers, booths & exhaust blowers.", image: "/img/products/venturi-scrubber.jpg" },
-  { name: "Chemical", icon: "Beaker", note: "Packed-bed scrubbers for acidic & odorous gases.", image: "/img/products/exhaust-blower.jpg" },
+  { name: "Chemical", icon: "Beaker", note: "Packed-bed scrubbers for acidic & odorous gases.", image: "/img/products/hybrid-scrubber.png" },
 ];
 
 export interface HeroSlide {
