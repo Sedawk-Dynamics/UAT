@@ -117,6 +117,7 @@ export const HERO_SLIDES: HeroSlide[] = [
   { kicker: "Air Pollution Control", title: "Manufacturer of Air Pollution Control Equipment", sub: "Dust collectors, bag houses & scrubbers engineered to keep your emissions compliant and your plant safe.", image: "/img/slider/Pulse-Jet-Bag-Filter.jpg" },
   { kicker: "HVAC Equipment", title: "Centrifugal Blowers & High-Pressure Fans", sub: "High-efficiency air movement built for high static pressure and demanding industrial duty.", image: "/img/slider/blower.jpg" },
   { kicker: "Draft Fans", title: "ID & FD Fans for Heavy-Duty Process", sub: "Induced and forced-draft fans engineered for boilers, kilns and high-temperature service.", image: "/img/slider/id-fan.jpg" },
+  { kicker: "Air Pollution Control", title: "Manufacturer of Air Pollution Control Equipment", sub: "Dust collectors, bag houses & scrubbers engineered to keep your emissions compliant and your plant safe.", image: "/img/slider/venturi-scrubber.jpg" },
   { kicker: "Ventilation", title: "Axial, Inline & Tube Fans", sub: "High-volume ventilation airflow across the full range of pressures and duties.", image: "/img/slider/Tube-Axial-Fan.jpg" },
   { kicker: "Clean Air", title: "Plug Fans & Air Handling Units", sub: "Direct-drive plug fans and modular AHUs for cleanroom and HVAC air treatment.", image: "/img/slider/plug-fan.jpg" },
   { kicker: "Turnkey & Fabrication", title: "Turnkey Projects & Fabrication", sub: "Design to commissioning, with full in-house MS, SS and PP-FRP fabrication.", image: "/img/slider/company-photo.jpg" },
