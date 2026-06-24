@@ -15,7 +15,7 @@ export default function WhyUs() {
       <div className="absolute inset-0 blueprint opacity-40" />
       <AirflowField className="opacity-30" />
 
-      <div className="relative mx-auto max-w-[90rem] px-4 sm:px-6">
+      <div className="relative mx-auto max-w-[1760px] px-4 sm:px-6">
         <Heading
           center
           light

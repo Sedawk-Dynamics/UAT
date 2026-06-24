@@ -13,7 +13,7 @@ export default function CTABand() {
       <div className="absolute inset-0 bg-blue-deep/40 mix-blend-multiply" />
       <div className="absolute inset-0 blueprint opacity-50" />
       <AirflowField className="opacity-40" />
-      <div className="relative mx-auto max-w-[90rem] px-4 text-center sm:px-6">
+      <div className="relative mx-auto max-w-[1760px] px-4 text-center sm:px-6">
         <Reveal className="mx-auto max-w-2xl">
           <h2 className="font-display text-[clamp(1.7rem,4vw,2.5rem)] font-bold text-white">
             Have a requirement? Get an engineered solution.

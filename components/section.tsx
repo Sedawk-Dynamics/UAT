@@ -25,7 +25,7 @@ export function Section({
 }) {
   return (
     <section id={id} className={cn(tones[tone], py, "relative", className)}>
-      <div className="mx-auto max-w-[90rem] px-4 sm:px-6">{children}</div>
+      <div className="mx-auto max-w-[1760px] px-4 sm:px-6">{children}</div>
     </section>
   );
 }

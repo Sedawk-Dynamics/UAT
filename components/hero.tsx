@@ -85,7 +85,7 @@ export default function Hero() {
       <AirflowField className="opacity-70" />
 
       {/* Foreground copy (crossfades with the active slide) */}
-      <div className="relative mx-auto w-full max-w-[90rem] px-4 pb-24 pt-28 sm:px-6">
+      <div className="relative mx-auto w-full max-w-[1760px] px-4 pb-24 pt-28 sm:px-6">
         <div className="max-w-3xl">
           <AnimatePresence mode="wait">
             <motion.div

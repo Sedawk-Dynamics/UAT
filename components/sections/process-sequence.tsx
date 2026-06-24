@@ -20,7 +20,7 @@ export default function ProcessSequence() {
   if (reduce) {
     return (
       <section className="bg-white py-20 md:py-24">
-        <div className="mx-auto max-w-[90rem] px-4 sm:px-6">
+        <div className="mx-auto max-w-[1760px] px-4 sm:px-6">
           <Heading center eyebrow="Our Capability" title="From design to lifecycle support" />
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {PROCESS.map((p) => (
@@ -40,7 +40,7 @@ export default function ProcessSequence() {
     <section ref={ref} className="relative bg-white" style={{ height: `${PROCESS.length * 80}vh` }}>
       <div className="sticky top-0 flex min-h-screen items-center overflow-hidden">
         <div className="absolute inset-0 mesh opacity-60" />
-        <div className="relative mx-auto grid w-full max-w-[90rem] gap-10 px-4 sm:px-6 lg:grid-cols-2">
+        <div className="relative mx-auto grid w-full max-w-[1760px] gap-10 px-4 sm:px-6 lg:grid-cols-2">
           <div>
             <Heading
               eyebrow="Our Capability"

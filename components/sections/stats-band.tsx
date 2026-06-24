@@ -11,7 +11,7 @@ export default function StatsBand() {
       <div className="absolute inset-0 bg-blue mix-blend-multiply" />
       <div className="absolute inset-0 blueprint opacity-50" />
       <AirflowField className="opacity-30" color="rgba(255,255,255,0.35)" />
-      <div className="relative mx-auto grid max-w-[90rem] grid-cols-2 gap-8 px-4 sm:px-6 md:grid-cols-5">
+      <div className="relative mx-auto grid max-w-[1760px] grid-cols-2 gap-8 px-4 sm:px-6 md:grid-cols-5">
         {STATS.map((s) => (
           <Stat key={s.label} value={s.value} suffix={s.suffix} label={s.label} plain={s.plain} />
         ))}

@@ -7,7 +7,7 @@ import Media from "../media";
 export default function IntroStrip() {
   return (
     <section className="bg-white py-20 md:py-24">
-      <div className="mx-auto grid max-w-[90rem] items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-[1760px] items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
         <Reveal>
           <div className="mb-3 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-blue">
             <span className="h-px w-8 bg-blue" />
