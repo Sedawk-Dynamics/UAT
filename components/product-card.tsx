@@ -27,6 +27,8 @@ export default function ProductCard({ p, index = 0 }: { p: FlatProduct; index?: 
             alt={p.name}
             ratio={4 / 3}
             zoom
+            imgClassName="object-contain p-2"
+            className="bg-bgsoft"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />
           <Badge className="absolute left-3 top-3 z-10 bg-white/90 text-[10px] font-bold uppercase tracking-wider text-blue hover:bg-white">

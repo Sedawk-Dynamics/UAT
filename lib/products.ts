@@ -392,6 +392,30 @@ export const CATALOG: Category[] = [
         applications: ["Commercial HVAC", "Pharmaceutical", "Hospitality"],
       },
       {
+        slug: "man-coolers",
+        name: "Man Coolers",
+        blurb: "High-velocity cooling air for workers in hot industrial areas.",
+        longDescription:
+          "Man Coolers are heavy-duty, high-velocity fans that direct a strong stream of air onto operators working in hot industrial areas — foundries, forging shops, furnaces and boiler floors. By moving large volumes of air at the work point, they relieve heat stress and improve comfort, safety and productivity where ambient cooling is impractical. Built rugged for continuous duty, in fixed, wall-mounted or portable configurations to suit the floor.",
+        features: [
+          "High-velocity air delivered straight to the work point",
+          "Relieves heat stress for workers in hot areas",
+          "Ideal for foundries, forging, furnace & boiler floors",
+          "Rugged construction for continuous industrial duty",
+          "Fixed, wall-mounted or portable configurations",
+          "Heavy-duty motor with balanced impeller for long life",
+        ],
+        specs: [
+          ["Type", "High-velocity man-cooling fan"],
+          ["Function", "Spot cooling of personnel"],
+          ["Mounting", "Fixed / wall / portable"],
+          ["Construction", "Heavy-duty MS, industrial finish"],
+          ["Drive", "Direct drive"],
+          ["Materials", "MS / SS as per application"],
+        ],
+        applications: ["Foundry", "Steel", "Engineering", "Ceramic", "General Industry"],
+      },
+      {
         slug: "air-handling-unit",
         name: "Air Handling Unit (AHU)",
         blurb: "Modular AHUs for HVAC and cleanroom air treatment.",
@@ -485,17 +509,21 @@ export const FALLBACK_IMAGE = "/img/feature.jpg";
 const PRODUCT_IMAGES: Record<string, { image: string; gallery?: string[] }> = {
   // Air Pollution Control
   "pulse-jet-bag-filter": {
-    image: "/img/products/puls-jet-bag-filtter.jpg",
+    image: "/img/products/pulse-jet-bag-filter-install-1.jpg",
     gallery: [
+      "/img/products/pulse-jet-bag-filter-install-2.jpg",
+      "/img/products/pulse-jet-bag-filter-install-3.jpg",
+      "/img/products/puls-jet-bag-filtter.jpg",
       "/img/products/puls-jet-bag-filtter-1.png",
       "/img/products/pulse-jet-system2.png",
       "/img/products/pulse-jet-system3.png",
       "/img/products/pulse-jet-system4.png",
-      "/img/products/pulse-jet-bag-filter-install-1.jpg",
-      "/img/products/pulse-jet-bag-filter-install-2.jpg",
     ],
   },
-  "cyclone-separator": { image: "/img/products/cyclone-separator.jpg" },
+  "cyclone-separator": {
+    image: "/img/products/cyclone-separator-1.jpg",
+    gallery: ["/img/products/cyclone-separator.jpg"],
+  },
   "bibo-dust-collector": {
     image: "/img/products/bibo-dust-collector.jpg",
     gallery: ["/img/products/bibo-dust-collector-1.jpg"],
@@ -507,6 +535,7 @@ const PRODUCT_IMAGES: Record<string, { image: string; gallery?: string[] }> = {
   "horizontal-dust-collector": {
     image: "/img/products/horizontal-dust-collector.jpg",
     gallery: [
+      "/img/products/horizontal-dust-collector-3.jpg",
       "/img/products/horizontal-dust-collector-1.jpg",
       "/img/products/horizontal-dust-collector-2.png",
     ],
@@ -521,15 +550,17 @@ const PRODUCT_IMAGES: Record<string, { image: string; gallery?: string[] }> = {
     ],
   },
   "venturi-scrubber": {
-    image: "/img/products/venturi-scrubber.jpg",
+    image: "/img/products/venturi-scrubber-main.png",
     gallery: [
+      "/img/products/venturi-scrubber.jpg",
       "/img/products/venturi-scrubber-1.jpg",
       "/img/products/venturi-scrubber-2.png",
     ],
   },
   "packed-bed-scrubber": {
-    image: "/img/products/packed-bed-scrubber.jpg",
+    image: "/img/products/packed-bed-scrubber-3.jpg",
     gallery: [
+      "/img/products/packed-bed-scrubber.jpg",
       "/img/products/packed-bed-scrubber-1.png",
       "/img/products/packed-bed-scrubber-2.png",
     ],
@@ -554,8 +585,10 @@ const PRODUCT_IMAGES: Record<string, { image: string; gallery?: string[] }> = {
   },
   // HVAC
   "centrifugal-blowers": {
-    image: "/img/products/centrifugal-blowers.jpg",
+    image: "/img/products/centrifugal-blowers-4.jpg",
     gallery: [
+      "/img/products/centrifugal-blowers-5.jpg",
+      "/img/products/centrifugal-blowers.jpg",
       "/img/products/centrifugal-blowers-1.jpg",
       "/img/products/centrifugal-blowers-2.jpg",
       "/img/products/centrifugal-blowers-3.jpg",
@@ -567,12 +600,12 @@ const PRODUCT_IMAGES: Record<string, { image: string; gallery?: string[] }> = {
     ],
   },
   "tube-axial-fan": {
-    image: "/img/products/tube-axial-fan.jpg",
+    image: "/img/products/tube-axial-fan-4.png",
     gallery: [
+      "/img/products/tube-axial-fan.jpg",
       "/img/products/tube-axial-fan-1.jpg",
       "/img/products/tube-axial-fan-2.png",
       "/img/products/tube-axial-fan-3.jpg",
-      "/img/products/tube-axial-fan-4.png",
       "/img/products/tube-axial-fan-5.png",
     ],
   },
@@ -590,6 +623,10 @@ const PRODUCT_IMAGES: Record<string, { image: string; gallery?: string[] }> = {
   "cabinet-fans": {
     image: "/img/products/cabinet-fans.jpg",
     gallery: ["/img/products/cabinet-fans-1.jpg"],
+  },
+  "man-coolers": {
+    image: "/img/products/man-coolers.jpg",
+    gallery: ["/img/products/man-coolers-1.jpg"],
   },
   "air-handling-unit": {
     image: "/img/products/air-handling-unit.jpg",

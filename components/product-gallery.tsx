@@ -25,8 +25,9 @@ export default function ProductGallery({
         alt={name}
         ratio={4 / 3}
         priority
+        imgClassName="object-contain p-3"
         sizes="(max-width: 1024px) 100vw, 50vw"
-        className="rounded-3xl border border-line shadow-[0_18px_50px_rgba(27,67,196,0.18)]"
+        className="rounded-3xl border border-line bg-bgsoft shadow-[0_18px_50px_rgba(27,67,196,0.18)]"
       />
       {images.length > 1 && (
         <div className="mt-3 grid grid-cols-4 gap-3 sm:grid-cols-5">
@@ -42,7 +43,7 @@ export default function ProductGallery({
                 active === i ? "border-blue" : "border-line hover:border-blue/50"
               )}
             >
-              <Media src={src} alt={`${name} — view ${i + 1}`} ratio={1} sizes="120px" />
+              <Media src={src} alt={`${name} — view ${i + 1}`} ratio={1} imgClassName="object-contain p-1" className="bg-bgsoft" sizes="120px" />
             </button>
           ))}
         </div>
