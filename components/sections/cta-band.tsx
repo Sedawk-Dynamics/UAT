@@ -8,8 +8,8 @@ import { SITE } from "@/lib/site";
 export default function CTABand() {
   return (
     <section className="relative overflow-hidden py-16">
-      <Image src="/img/slider/company-photo.jpg" alt="" aria-hidden fill sizes="100vw" className="object-cover" />
-      <div className="absolute inset-0 bg-blue-deep/92" />
+      <Image src="/img/products/centrifugal-blowers-hall.jpg" alt="" aria-hidden fill sizes="100vw" className="object-cover" />
+      <div className="absolute inset-0 bg-blue-deep/85" />
       <div className="absolute inset-0 bg-blue-deep/40 mix-blend-multiply" />
       <div className="absolute inset-0 blueprint opacity-50" />
       <AirflowField className="opacity-40" />

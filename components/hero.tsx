@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { Fragment, useEffect, useState, useCallback } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ArrowRight, Check } from "lucide-react";
 import Image from "next/image";
@@ -101,19 +101,23 @@ export default function Hero() {
             </motion.div>
           </AnimatePresence>
 
-          <h1 className="font-display text-[clamp(2.5rem,5.6vw,4.75rem)] font-bold leading-[1.04] text-white">
+          <h1 className="font-display text-[clamp(1.7rem,5.6vw,4.75rem)] font-bold leading-[1.1] text-white [overflow-wrap:break-word]">
             <AnimatePresence mode="wait">
-              <motion.span key={`title-${selected}`} className="inline-block">
+              <motion.span key={`title-${selected}`} className="block">
                 {HERO_SLIDES[selected].title.split(" ").map((word, wi) => (
-                  <motion.span
-                    key={`${selected}-${wi}`}
-                    initial={reduce ? { opacity: 0 } : { opacity: 0, y: 26, filter: "blur(8px)" }}
-                    animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0, filter: "blur(0px)" }}
-                    transition={{ duration: 0.5, delay: 0.06 * wi, ease: [0.2, 0.7, 0.2, 1] }}
-                    className="mr-[0.28em] inline-block"
-                  >
-                    {word}
-                  </motion.span>
+                  // Real space text node after each word keeps a line-break
+                  // opportunity between the animated (inline-block) words, so the
+                  // title wraps instead of overflowing on narrow screens.
+                  <Fragment key={`${selected}-${wi}`}>
+                    <motion.span
+                      initial={reduce ? { opacity: 0 } : { opacity: 0, y: 26, filter: "blur(8px)" }}
+                      animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0, filter: "blur(0px)" }}
+                      transition={{ duration: 0.5, delay: 0.06 * wi, ease: [0.2, 0.7, 0.2, 1] }}
+                      className="inline-block"
+                    >
+                      {word}
+                    </motion.span>{" "}
+                  </Fragment>
                 ))}
               </motion.span>
             </AnimatePresence>

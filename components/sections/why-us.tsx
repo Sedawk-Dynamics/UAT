@@ -30,7 +30,7 @@ export default function WhyUs() {
                 <div className="grid size-12 place-items-center rounded-xl bg-yellow text-ink">
                   <LucideIcon name={p.icon} className="size-6" />
                 </div>
-                <h3 className="mt-4 font-display text-lg font-bold text-white">{p.title}</h3>
+                <h3 className="mt-4 font-display text-lg font-bold text-white [word-spacing:0.16em]">{p.title}</h3>
                 <p className="mt-2 text-sm text-white/75">{p.text}</p>
               </div>
             </Reveal>

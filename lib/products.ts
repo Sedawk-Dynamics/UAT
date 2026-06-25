@@ -512,8 +512,6 @@ const PRODUCT_IMAGES: Record<string, { image: string; gallery?: string[] }> = {
     image: "/img/products/pulse-jet-bag-filter-install-1.jpg",
     gallery: [
       "/img/products/pulse-jet-bag-filter-install-2.jpg",
-      "/img/products/pulse-jet-bag-filter-install-3.jpg",
-      "/img/products/puls-jet-bag-filtter.jpg",
       "/img/products/puls-jet-bag-filtter-1.png",
       "/img/products/pulse-jet-system2.png",
       "/img/products/pulse-jet-system3.png",
@@ -538,6 +536,7 @@ const PRODUCT_IMAGES: Record<string, { image: string; gallery?: string[] }> = {
       "/img/products/horizontal-dust-collector-3.jpg",
       "/img/products/horizontal-dust-collector-1.jpg",
       "/img/products/horizontal-dust-collector-2.png",
+      "/img/products/pulse-jet-bag-filter-install-3.jpg",
     ],
   },
   "gmp-portable-dust-collector": {
