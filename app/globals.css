@@ -113,6 +113,14 @@
     @apply font-sans;
     -webkit-text-size-adjust: 100%;
   }
+  /* Scale the whole type system up on desktop so copy, nav and headings
+     read comfortably on large screens (all rem-based sizing follows). */
+  @media (min-width: 1024px) {
+    html { font-size: 17px; }
+  }
+  @media (min-width: 1536px) {
+    html { font-size: 18px; }
+  }
   body {
     @apply bg-background text-foreground antialiased;
     /* clip (not hidden) prevents stray horizontal scroll without breaking position: sticky */

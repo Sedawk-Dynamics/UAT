@@ -82,8 +82,8 @@ export default function SiteHeader() {
 
       {/* Main bar — relative so the mega panel can anchor to the full container width */}
       <div className="mx-auto max-w-[1760px] px-4 sm:px-6">
-        <div className={cn("relative flex items-center justify-between gap-4 transition-all duration-300", scrolled ? "h-16" : "h-20")}>
-          <Link href="/" aria-label="UAT home" className="shrink-0"><Logo priority className="h-12 sm:h-14" /></Link>
+        <div className={cn("relative flex items-center justify-between gap-4 transition-all duration-300", scrolled ? "h-16 lg:h-20" : "h-20 lg:h-28")}>
+          <Link href="/" aria-label="UAT home" className="shrink-0"><Logo priority className="h-12 sm:h-14 lg:h-18" /></Link>
 
           {/* Desktop nav */}
           <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
