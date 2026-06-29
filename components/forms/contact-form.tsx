@@ -18,6 +18,10 @@ import { submitForm } from "@/lib/submit-form";
 const schema = z.object({
   name: z.string().min(2, "Please enter your name."),
   email: z.string().email("Enter a valid email."),
+  phone: z
+    .string()
+    .min(7, "Enter a valid phone number.")
+    .regex(/^[\d+\-\s()]+$/, "Enter a valid phone number."),
   message: z.string().min(10, "Please enter a short message (min 10 characters)."),
   botcheck: z.string().optional(),
 });
@@ -26,13 +30,13 @@ type Values = z.infer<typeof schema>;
 export default function ContactForm() {
   const form = useForm<Values>({
     resolver: zodResolver(schema),
-    defaultValues: { name: "", email: "", message: "", botcheck: "" },
+    defaultValues: { name: "", email: "", phone: "", message: "", botcheck: "" },
   });
   const { isSubmitting, isSubmitSuccessful } = form.formState;
 
   const mailtoFallback = () => {
     const v = form.getValues();
-    return `mailto:${SITE.email}?subject=${encodeURIComponent("Website enquiry — " + v.name)}&body=${encodeURIComponent(v.message + "\n\nFrom: " + v.email)}`;
+    return `mailto:${SITE.email}?subject=${encodeURIComponent("Website enquiry — " + v.name)}&body=${encodeURIComponent(v.message + "\n\nFrom: " + v.email + "\nPhone: " + v.phone)}`;
   };
 
   const onSubmit = async (data: Values) => {
@@ -42,6 +46,7 @@ export default function ContactForm() {
         formType: "contact",
         name: data.name,
         email: data.email,
+        phone: data.phone,
         message: data.message,
         botcheck: data.botcheck,
       });
@@ -75,6 +80,9 @@ export default function ContactForm() {
         )} />
         <FormField control={form.control} name="email" render={({ field }) => (
           <FormItem><FormLabel>Email</FormLabel><FormControl><Input type="email" placeholder="you@company.com" {...field} /></FormControl><FormMessage /></FormItem>
+        )} />
+        <FormField control={form.control} name="phone" render={({ field }) => (
+          <FormItem><FormLabel>Phone</FormLabel><FormControl><Input type="tel" inputMode="tel" autoComplete="tel" placeholder="+91 98765 43210" {...field} /></FormControl><FormMessage /></FormItem>
         )} />
         <FormField control={form.control} name="message" render={({ field }) => (
           <FormItem><FormLabel>Message</FormLabel><FormControl><Textarea rows={4} placeholder="How can we help?" {...field} /></FormControl><FormMessage /></FormItem>
