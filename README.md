@@ -2,7 +2,7 @@
 
 A production-grade, motion-rich **brochure website** for an industrial air-engineering
 manufacturer. The only dynamic feature is a contact/inquiry form that emails submissions to
-**info@uat.com** via **Web3Forms** (no backend).
+**info@uatindia.com** over **SMTP** via a small serverless route (`app/api/contact`, nodemailer).
 
 > Tagline: **Cleaning Air, Saving Lives.**
 > Signature idea — *make invisible air visible*: flowing aerodynamic line motifs
@@ -30,8 +30,8 @@ manufacturer. The only dynamic feature is a contact/inquiry form that emails sub
 ```bash
 npm install
 
-# configure the form email key (see below)
-cp .env.local.example .env.local      # then paste your Web3Forms key
+# configure the form SMTP credentials (see below)
+cp .env.local.example .env.local      # then fill in the SMTP_* values
 
 npm run dev          # http://localhost:3000  (Turbopack)
 npm run build        # production build (SSG)
@@ -43,19 +43,22 @@ npm start            # serve the build
 Copy `.env.local.example` → `.env.local`:
 
 ```
-NEXT_PUBLIC_WEB3FORMS_KEY=your-web3forms-access-key-here
-NEXT_PUBLIC_SITE_URL=https://www.uat.com
+NEXT_PUBLIC_SITE_URL=https://www.uatindia.com
+
+# SMTP (server-only — never NEXT_PUBLIC). Form submissions are delivered to MAIL_TO.
+SMTP_HOST=mail.uatindia.com
+SMTP_PORT=465              # 465 (SSL) or 587 (STARTTLS)
+SMTP_USER=info@uatindia.com
+SMTP_PASS=your-mailbox-password
+MAIL_TO=info@uatindia.com
+MAIL_FROM=info@uatindia.com
 ```
 
-**Generating the Web3Forms key (free, no backend):**
-
-1. Go to <https://web3forms.com>.
-2. Enter the destination inbox **`info@uat.com`** and create an Access Key (emailed to you).
-3. Paste it into `.env.local` as `NEXT_PUBLIC_WEB3FORMS_KEY`.
-
-Until a valid key is present, both forms show a notice and still offer a **mailto fallback** to
-`info@uat.com`, so no submission is ever lost. `NEXT_PUBLIC_SITE_URL` feeds metadata, `sitemap.xml`
-and JSON-LD.
+The contact & inquiry forms POST to `app/api/contact`, which sends the message over SMTP
+([`lib/mailer.ts`](lib/mailer.ts), nodemailer). If the SMTP vars are missing or the send fails, the
+form falls back to a **mailto** link to `info@uatindia.com`, so no submission is ever lost.
+`NEXT_PUBLIC_SITE_URL` feeds metadata, `sitemap.xml` and JSON-LD (a protocol-less value like
+`www.uatindia.com` is normalised to `https://`).
 
 ## Imagery
 
@@ -84,7 +87,7 @@ mixed-source photos read as one brand system.
 
 1. Push the repo to GitHub/GitLab/Bitbucket.
 2. Vercel → **New Project → Import** (framework auto-detected as Next.js).
-3. **Settings → Environment Variables**: add `NEXT_PUBLIC_WEB3FORMS_KEY` and `NEXT_PUBLIC_SITE_URL`.
+3. **Settings → Environment Variables**: add `NEXT_PUBLIC_SITE_URL` and the `SMTP_*` / `MAIL_*` vars.
 4. **Deploy.** Pushes to the default branch auto-deploy.
 
 ## Structure
@@ -107,14 +110,16 @@ components/
   page-hero, smooth-scroll, scroll-progress, floating-buttons, lucide-icon, providers
   sections/  intro-strip, category-cards, featured-products (tabs), why-us, stats-band,
              industries-section (marquee), process-sequence (pinned), cta-band
-  forms/     inquiry-form, contact-form  (shadcn form + RHF + zod + sonner + Web3Forms)
+  forms/     inquiry-form, contact-form  (shadcn form + RHF + zod + sonner → /api/contact)
   ui/        shadcn primitives
+app/api/contact/route.ts  SMTP form handler (nodemailer)
 lib/
-  products.ts  single source of truth for the catalog
-  site.ts      NAP, stats, pillars, process, industries, hero slides
-  schema.ts    Organization + LocalBusiness + Product JSON-LD
-  web3forms.ts form submission helper
-  utils.ts     cn()
+  products.ts    single source of truth for the catalog
+  site.ts        NAP, stats, pillars, process, industries, hero slides
+  schema.ts      Organization + LocalBusiness + WebSite + Breadcrumb + Product JSON-LD
+  mailer.ts      SMTP transport (nodemailer)
+  submit-form.ts client helper that POSTs to /api/contact
+  utils.ts       cn()
 _v2-next15/            previous Next.js 15 build (archived for reference)
 _legacy-single-file/   original single-file React preview (archived)
 ```
@@ -149,5 +154,5 @@ footer `Download Catalogue` link target (`/catalogue.pdf`) with a real PDF.
 
 ## Note on contact details
 
-Phone/WhatsApp `+91 98211 52726` and `info@uat.com` are taken verbatim from the brief. Update them
-in one place — [`lib/site.ts`](lib/site.ts) — if the real domain or number differ.
+Phone/WhatsApp `+91 98211 52726` and `info@uatindia.com` live in one place —
+[`lib/site.ts`](lib/site.ts) — update them there if the real domain or number differ.
