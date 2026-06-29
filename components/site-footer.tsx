@@ -26,10 +26,10 @@ export default function SiteFooter() {
             <p className="mt-4 max-w-sm text-sm text-white/70">{SITE.positioning}</p>
             <p className="mt-4 font-display text-lg font-bold text-yellow">{SITE.tagline}</p>
             <div className="mt-5 flex items-center gap-3">
-              <a href={SITE.social.instagram} aria-label="Instagram" className="grid size-9 place-items-center rounded-lg bg-white/10 transition-colors hover:bg-yellow hover:text-ink"><Instagram className="size-4" /></a>
-              <a href={SITE.social.facebook} aria-label="Facebook" className="grid size-9 place-items-center rounded-lg bg-white/10 transition-colors hover:bg-yellow hover:text-ink"><Facebook className="size-4" /></a>
-              <a href={SITE.social.x} aria-label="X (Twitter)" className="grid size-9 place-items-center rounded-lg bg-white/10 transition-colors hover:bg-yellow hover:text-ink"><X className="size-4" /></a>
-              <a href={SITE.social.linkedin} aria-label="LinkedIn" className="grid size-9 place-items-center rounded-lg bg-white/10 transition-colors hover:bg-yellow hover:text-ink"><Linkedin className="size-4" /></a>
+              <a href={SITE.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="grid size-9 place-items-center rounded-lg bg-white/10 transition-colors hover:bg-yellow hover:text-ink"><Instagram className="size-4" /></a>
+              <a href={SITE.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="grid size-9 place-items-center rounded-lg bg-white/10 transition-colors hover:bg-yellow hover:text-ink"><Facebook className="size-4" /></a>
+              <a href={SITE.social.x} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="grid size-9 place-items-center rounded-lg bg-white/10 transition-colors hover:bg-yellow hover:text-ink"><X className="size-4" /></a>
+              <a href={SITE.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="grid size-9 place-items-center rounded-lg bg-white/10 transition-colors hover:bg-yellow hover:text-ink"><Linkedin className="size-4" /></a>
             </div>
           </div>
 

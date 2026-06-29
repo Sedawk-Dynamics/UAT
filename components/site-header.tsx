@@ -72,10 +72,10 @@ export default function SiteHeader() {
             <span className="hidden items-center gap-1.5 md:flex"><Clock className="size-3.5" />{SITE.hours}</span>
           </div>
           <div className="flex shrink-0 items-center gap-1.5">
-            <a href={SITE.social.instagram} aria-label="Instagram" className="grid size-7 place-items-center rounded-md bg-white/10 transition-colors hover:bg-yellow hover:text-blue-deep"><Instagram className="size-4" /></a>
-            <a href={SITE.social.facebook} aria-label="Facebook" className="grid size-7 place-items-center rounded-md bg-white/10 transition-colors hover:bg-yellow hover:text-blue-deep"><Facebook className="size-4" /></a>
-            <a href={SITE.social.x} aria-label="X (Twitter)" className="grid size-7 place-items-center rounded-md bg-white/10 transition-colors hover:bg-yellow hover:text-blue-deep"><X className="size-3.5" /></a>
-            <a href={SITE.social.linkedin} aria-label="LinkedIn" className="grid size-7 place-items-center rounded-md bg-white/10 transition-colors hover:bg-yellow hover:text-blue-deep"><Linkedin className="size-4" /></a>
+            <a href={SITE.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="grid size-7 place-items-center rounded-md bg-white/10 transition-colors hover:bg-yellow hover:text-blue-deep"><Instagram className="size-4" /></a>
+            <a href={SITE.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="grid size-7 place-items-center rounded-md bg-white/10 transition-colors hover:bg-yellow hover:text-blue-deep"><Facebook className="size-4" /></a>
+            <a href={SITE.social.x} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="grid size-7 place-items-center rounded-md bg-white/10 transition-colors hover:bg-yellow hover:text-blue-deep"><X className="size-3.5" /></a>
+            <a href={SITE.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="grid size-7 place-items-center rounded-md bg-white/10 transition-colors hover:bg-yellow hover:text-blue-deep"><Linkedin className="size-4" /></a>
           </div>
         </div>
       </div>

@@ -38,7 +38,7 @@ export function organizationSchema() {
       },
     ],
     hasMap: SITE.mapLink,
-    sameAs: Object.values(SITE.social).filter((u) => u && u !== "#"),
+    sameAs: Object.values(SITE.social).filter((u) => /^https?:\/\//.test(u)),
   };
 }
 
