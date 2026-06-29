@@ -1,5 +1,16 @@
 /** Company facts, NAP, and reusable content blocks. */
 
+/**
+ * Canonical site URL from env, normalised so it never breaks `new URL()`:
+ * prepends https:// when the protocol is omitted (e.g. "www.uatindia.com")
+ * and strips any trailing slash.
+ */
+const SITE_URL = (() => {
+  const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/+$/, "");
+  if (!raw) return "https://www.uatindia.com";
+  return /^https?:\/\//i.test(raw) ? raw : `https://${raw}`;
+})();
+
 export const SITE = {
   brand: "UAT",
   full: "Universal Air Technologies",
@@ -30,8 +41,7 @@ export const SITE = {
   ogImage: "/img/logo-og.jpg",
   catalogueUrl:
     "https://www.universalairtechnologies.com/download/Universal-single-page-catalogue.pdf",
-  url:
-    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://www.uat.com",
+  url: SITE_URL,
   social: {
     facebook: "#",
     linkedin: "#",
