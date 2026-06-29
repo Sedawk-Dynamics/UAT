@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   title: "Contact UAT | Vadodara, Gujarat | +91 98211 52726",
   description: "Contact UAT Private Limited, Vadodara. Phone, WhatsApp, email and plant map. Mon–Sat 9–6.",
   alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact UAT — Vadodara, Gujarat",
+    description: "Phone, WhatsApp, email and plant map. Mon–Sat 9–6.",
+  },
 };
 
 const CARDS = [

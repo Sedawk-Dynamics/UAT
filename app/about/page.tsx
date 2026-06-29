@@ -16,6 +16,11 @@ export const metadata: Metadata = {
   description:
     "UAT — a trusted manufacturer of air-pollution-control & HVAC equipment, established 1994. Cleaning Air, Saving Lives.",
   alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About UAT — 30+ Years in Industrial Air Engineering",
+    description:
+      "A trusted manufacturer of air-pollution-control & HVAC equipment, established 1994. Cleaning Air, Saving Lives.",
+  },
 };
 
 export default function AboutPage() {

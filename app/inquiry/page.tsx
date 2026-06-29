@@ -10,8 +10,13 @@ import { SITE, WHY_POINTS } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Request a Quote | Industrial Air Solutions",
   description:
-    "Send your RFQ to UAT. Custom-engineered dust collectors, scrubbers, blowers, fans & AHUs. Routed to info@uat.com.",
+    "Send your RFQ to UAT. Custom-engineered dust collectors, scrubbers, blowers, fans & AHUs. Routed to info@uatindia.com.",
   alternates: { canonical: "/inquiry" },
+  openGraph: {
+    title: "Request a Quote — UAT Industrial Air Solutions",
+    description:
+      "Send your RFQ to UAT. Custom-engineered dust collectors, scrubbers, blowers, fans & AHUs.",
+  },
 };
 
 export default async function InquiryPage({

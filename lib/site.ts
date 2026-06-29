@@ -21,7 +21,7 @@ export const SITE = {
   phone: "+91 98211 52726",
   phoneHref: "tel:+919821152726",
   whatsapp: "https://wa.me/919821152726",
-  email: "info@uat.com",
+  email: "info@uatindia.com",
   gst: "24AAECU0661L1ZA",
   hours: "Mon–Sat 9:00 AM – 6:00 PM · Sun Closed",
   address:

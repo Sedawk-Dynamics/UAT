@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   description:
     "Air-pollution-control & HVAC solutions for thermal power, cement, pharma, steel, foundry, chemical and more.",
   alternates: { canonical: "/industries" },
+  openGraph: {
+    title: "Industries Served by UAT",
+    description:
+      "Air-pollution-control & HVAC solutions for thermal power, cement, pharma, steel, foundry, chemical and more.",
+  },
 };
 
 export default function IndustriesPage() {

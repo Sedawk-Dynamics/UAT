@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion } from "motion/react";
 import { toast } from "sonner";
-import { Send, Check, AlertTriangle, Loader2 } from "lucide-react";
+import { Send, Check, Loader2 } from "lucide-react";
 import Btn from "../brand-button";
 import {
   Form, FormField, FormItem, FormLabel, FormControl, FormMessage,
@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/select";
 import { CATALOG, getProduct } from "@/lib/products";
 import { INDUSTRIES, SITE } from "@/lib/site";
-import { WEB3FORMS_KEY, submitWeb3Forms } from "@/lib/web3forms";
+import { submitForm } from "@/lib/submit-form";
 
 const schema = z.object({
   name: z.string().min(2, "Please enter your name."),
@@ -68,17 +68,17 @@ export default function InquiryForm({
     if (data.botcheck) return;
     const prod = data.product ? getProduct(data.product)?.name ?? data.product : "General enquiry";
     try {
-      await submitWeb3Forms({
-        subject: "New website enquiry — UAT",
-        from_name: "UAT Website",
-        "Product / Category": prod,
+      await submitForm({
+        formType: "inquiry",
         name: data.name,
         company: data.company,
         email: data.email,
         phone: data.phone,
+        product: prod,
         industry: data.industry || "—",
         capacity: data.capacity || "—",
         message: data.message,
+        botcheck: data.botcheck,
       });
       toast.success("Inquiry sent — we'll be in touch.");
     } catch {
@@ -167,13 +167,6 @@ export default function InquiryForm({
             )} />
           </div>
         </div>
-
-        {!WEB3FORMS_KEY && (
-          <p className="mt-4 flex items-start gap-2 rounded-lg bg-yellow/15 p-3 text-xs text-ink">
-            <AlertTriangle className="mt-0.5 size-4 shrink-0 text-yellow-deep" />
-            Web3Forms key not configured. Add <code className="mx-1 rounded bg-white px-1">NEXT_PUBLIC_WEB3FORMS_KEY</code> to <code className="mx-1 rounded bg-white px-1">.env.local</code> to enable email delivery (see README). The form still offers a mailto fallback.
-          </p>
-        )}
 
         <div className="mt-6 flex flex-wrap items-center gap-4">
           <Btn type="submit" disabled={isSubmitting} magnetic>

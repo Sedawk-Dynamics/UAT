@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   description:
     "Browse UAT's range: pulse-jet bag filters, BIBO units, scrubbers, centrifugal blowers, ID/FD fans, AHUs and turnkey fabrication.",
   alternates: { canonical: "/products" },
+  openGraph: {
+    title: "UAT Products — APC, HVAC & Turnkey Fabrication",
+    description:
+      "Pulse-jet bag filters, BIBO units, scrubbers, centrifugal blowers, ID/FD fans, AHUs and turnkey fabrication.",
+  },
 };
 
 export default function ProductsPage() {

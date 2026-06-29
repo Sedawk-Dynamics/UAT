@@ -13,7 +13,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { SITE } from "@/lib/site";
-import { submitWeb3Forms } from "@/lib/web3forms";
+import { submitForm } from "@/lib/submit-form";
 
 const schema = z.object({
   name: z.string().min(2, "Please enter your name."),
@@ -38,12 +38,12 @@ export default function ContactForm() {
   const onSubmit = async (data: Values) => {
     if (data.botcheck) return;
     try {
-      await submitWeb3Forms({
-        subject: "New website enquiry — UAT",
-        from_name: "UAT Website",
+      await submitForm({
+        formType: "contact",
         name: data.name,
         email: data.email,
         message: data.message,
+        botcheck: data.botcheck,
       });
       toast.success("Message sent — we'll be in touch.");
     } catch {

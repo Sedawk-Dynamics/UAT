@@ -11,7 +11,7 @@ import ProductCard from "@/components/product-card";
 import CTABand from "@/components/sections/cta-band";
 import { Badge } from "@/components/ui/badge";
 import { ALL_PRODUCTS, getProduct, getCategory, FALLBACK_IMAGE } from "@/lib/products";
-import { productSchema } from "@/lib/schema";
+import { productSchema, breadcrumbSchema } from "@/lib/schema";
 import { SITE } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -30,7 +30,12 @@ export async function generateMetadata({
     title: `${p.name} | UAT Industrial Air Equipment`,
     description: p.blurb,
     alternates: { canonical: `/products/${p.slug}` },
-    openGraph: { title: `${p.name} — UAT`, description: p.blurb },
+    openGraph: {
+      title: `${p.name} — UAT`,
+      description: p.blurb,
+      type: "website",
+      images: [{ url: p.image ?? FALLBACK_IMAGE, alt: p.name }],
+    },
   };
 }
 
@@ -46,20 +51,19 @@ export default async function ProductPage({
   const cat = getCategory(p.category)!;
   const related = cat.products.filter((x) => x.slug !== p.slug).slice(0, 3);
 
+  const crumbs = [
+    { label: "Home", href: "/" },
+    { label: "Products", href: "/products" },
+    { label: cat.short, href: `/products/category/${cat.slug}` },
+    { label: p.name },
+  ];
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema(p)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema(crumbs)) }} />
 
-      <PageHero
-        eyebrow={cat.name}
-        title={p.name}
-        crumbs={[
-          { label: "Home", href: "/" },
-          { label: "Products", href: "/products" },
-          { label: cat.short, href: `/products/category/${cat.slug}` },
-          { label: p.name },
-        ]}
-      />
+      <PageHero eyebrow={cat.name} title={p.name} crumbs={crumbs} />
 
       <Section tone="white" py="py-14">
         <div className="grid gap-10 lg:grid-cols-2">

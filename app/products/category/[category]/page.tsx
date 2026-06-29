@@ -7,6 +7,7 @@ import Btn from "@/components/brand-button";
 import ProductCard from "@/components/product-card";
 import CTABand from "@/components/sections/cta-band";
 import { CATALOG, getCategory } from "@/lib/products";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export function generateStaticParams() {
   return CATALOG.map((c) => ({ category: c.slug }));
@@ -20,7 +21,16 @@ export async function generateMetadata({
   const { category } = await params;
   const cat = getCategory(category);
   if (!cat) return { title: "Products" };
-  return { title: cat.name, description: cat.blurb, alternates: { canonical: `/products/category/${cat.slug}` } };
+  return {
+    title: `${cat.name} | UAT`,
+    description: cat.blurb,
+    alternates: { canonical: `/products/category/${cat.slug}` },
+    openGraph: {
+      title: `${cat.name} — UAT`,
+      description: cat.blurb,
+      images: cat.image ? [{ url: cat.image, alt: cat.name }] : undefined,
+    },
+  };
 }
 
 export default async function CategoryPage({
@@ -32,13 +42,17 @@ export default async function CategoryPage({
   const cat = getCategory(category);
   if (!cat) notFound();
 
+  const crumbs = [{ label: "Home", href: "/" }, { label: "Products", href: "/products" }, { label: cat.short }];
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema(crumbs)) }} />
+
       <PageHero
         eyebrow={`${cat.tag} Range`}
         title={cat.name}
         sub={cat.blurb}
-        crumbs={[{ label: "Home", href: "/" }, { label: "Products", href: "/products" }, { label: cat.short }]}
+        crumbs={crumbs}
       />
 
       <Section tone="white" py="py-16">

@@ -42,6 +42,33 @@ export function organizationSchema() {
   };
 }
 
+/** JSON-LD: WebSite entity for the whole site. */
+export function websiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE.url}/#website`,
+    name: `${SITE.brand} (${SITE.full})`,
+    url: SITE.url,
+    publisher: { "@id": `${SITE.url}/#organization` },
+    inLanguage: "en-IN",
+  };
+}
+
+/** JSON-LD: BreadcrumbList from the page's visible breadcrumb trail. */
+export function breadcrumbSchema(items: { label: string; href?: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.label,
+      ...(item.href ? { item: `${SITE.url}${item.href}` } : {}),
+    })),
+  };
+}
+
 /** JSON-LD: Product for a detail page. */
 export function productSchema(p: FlatProduct) {
   return {
