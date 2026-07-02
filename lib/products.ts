@@ -656,7 +656,7 @@ const PRODUCT_IMAGES: Record<string, { image: string; gallery?: string[] }> = {
 };
 
 const CATEGORY_IMAGES: Record<CategorySlug, string> = {
-  "air-pollution-control": "/img/products/puls-jet-bag-filtter.jpg",
+  "air-pollution-control": "/img/products/air-handling-unit.jpg",
   "hvac-equipment": "/img/products/blower.jpg",
   "turnkey-projects-fabrication": "/img/slider/company-photo.jpg",
 };
