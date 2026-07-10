@@ -38,7 +38,7 @@ export default function IntroStrip() {
             <div className="absolute -right-3 -top-3 hidden h-full w-full rounded-3xl border border-blue/30 sm:block" aria-hidden="true" />
             <ImageReveal className="relative">
               <Media
-                src="/img/about-1.jpg"
+                src="/img/uat22.jpeg"
                 alt="UAT manufacturing facility"
                 ratio={4 / 3}
                 duotone
