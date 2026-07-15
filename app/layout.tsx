@@ -37,7 +37,7 @@ export const metadata: Metadata = {
       "Industrial dust collectors, bag filters, scrubbers, centrifugal blowers, ID/FD fans, AHUs & turnkey fabrication. Cleaning Air, Saving Lives.",
     locale: "en_IN",
     url: SITE.url,
-    images: [{ url: SITE.ogImage, width: 1200, height: 630, alt: "UAT — Universal Air Technologies" }],
+    images: [{ url: SITE.ogImage, width: 2658, height: 1136, alt: "UAT — Universal Air Technologies" }],
   },
   twitter: { card: "summary_large_image", images: [SITE.ogImage] },
   robots: { index: true, follow: true },

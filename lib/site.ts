@@ -38,7 +38,7 @@ export const SITE = {
   mapEmbed:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7374.245988534221!2d73.20900318285281!3d22.46201189418878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fcd66dd10a6b1%3A0xfa482f68fa434233!2sUniversal%20Air%20Technologies!5e0!3m2!1sen!2sin",
   geo: { lat: 22.462, lng: 73.209 },
-  ogImage: "/img/og-image.png",
+  ogImage: "/uat2.png",
   catalogueUrl:
     "https://www.universalairtechnologies.com/download/Universal-single-page-catalogue.pdf",
   url: SITE_URL,
