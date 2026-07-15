@@ -43,10 +43,10 @@ export const SITE = {
     "https://www.universalairtechnologies.com/download/Universal-single-page-catalogue.pdf",
   url: SITE_URL,
   social: {
-    facebook: "https://www.facebook.com/uatairsystem",
-    linkedin: "https://www.linkedin.com/company/uat-air-systems/",
-    instagram: "https://www.instagram.com/uatairsystems/",
-    x: "https://x.com/uatairsystems",
+    facebook: "https://www.facebook.com/uatpvtltd",
+    linkedin: "https://www.linkedin.com/company/uat-pvt-ltd/",
+    instagram: "https://www.instagram.com/uatpvtltd/",
+    x: "https://x.com/uatpvtltd",
   },
 } as const;
 
